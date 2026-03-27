@@ -186,7 +186,21 @@ export default function Porcentagem() {
   const [result, setResult] = useState<CalcResult | null>(null);
 
   useEffect(() => {
-    document.title = "Calculadora de Porcentagem | Fazaconta Online";
+    document.title = "Calculadora de Porcentagem Online Grátis | Fazaconta";
+
+    let metaDesc = document.querySelector<HTMLMetaElement>('meta[name="description"]');
+    if (!metaDesc) {
+      metaDesc = document.createElement("meta");
+      metaDesc.name = "description";
+      document.head.appendChild(metaDesc);
+    }
+    const previousContent = metaDesc.content;
+    metaDesc.content =
+      "Calcule porcentagem de forma rápida e fácil. Descubra valores, descontos e aumentos percentuais com nossa calculadora online gratuita.";
+
+    return () => {
+      metaDesc!.content = previousContent;
+    };
   }, []);
 
   const schema = schemas[activeMode];
@@ -278,10 +292,10 @@ export default function Porcentagem() {
           <Percent className="w-8 h-8" />
         </div>
         <h1 className="text-3xl sm:text-4xl font-display font-bold mb-3">
-          Calculadora de Porcentagem
+          Calculadora de Porcentagem Online
         </h1>
         <p className="text-lg text-muted-foreground">
-          Calcule porcentagens, aumentos, descontos e variações de forma rápida.
+          Calcule porcentagens de forma rápida e gratuita. Use os cinco modos disponíveis: calcular quanto é X% de um valor, descobrir que percentual um valor representa de outro, calcular aumento percentual, calcular desconto percentual e calcular a variação percentual entre dois valores.
         </p>
       </div>
 
@@ -353,6 +367,60 @@ export default function Porcentagem() {
           </div>
         </CardContent>
       </Card>
+
+      <div className="mt-10 space-y-8 text-base text-foreground">
+        <section>
+          <h2 className="text-xl font-semibold mb-3">Como calcular porcentagem?</h2>
+          <p className="text-muted-foreground">
+            Para calcular a porcentagem de um valor, use a fórmula: <strong>Resultado = Valor × Percentual ÷ 100</strong>.
+            Por exemplo, para saber quanto é 15% de R$&nbsp;200,00, basta calcular 200 × 15 ÷ 100 = R$&nbsp;30,00.
+            A calculadora acima faz esse cálculo automaticamente assim que você preenche os campos.
+          </p>
+        </section>
+
+        <section>
+          <h2 className="text-xl font-semibold mb-3">Exemplos práticos de porcentagem</h2>
+          <ul className="list-disc list-inside space-y-2 text-muted-foreground">
+            <li><strong>Desconto em compra:</strong> um produto de R$&nbsp;150,00 com 20% de desconto sai por R$&nbsp;120,00.</li>
+            <li><strong>Aumento salarial:</strong> um salário de R$&nbsp;3.000,00 com reajuste de 8% passa a ser R$&nbsp;3.240,00.</li>
+            <li><strong>Comissão sobre vendas:</strong> uma comissão de 5% sobre R$&nbsp;10.000,00 em vendas equivale a R$&nbsp;500,00.</li>
+            <li><strong>Variação de preço de produto:</strong> um item que custava R$&nbsp;80,00 e passou a custar R$&nbsp;92,00 teve uma variação de +15%.</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2 className="text-xl font-semibold mb-3">Como calcular aumento e desconto percentual?</h2>
+          <p className="text-muted-foreground">
+            Para calcular um <strong>aumento percentual</strong>, use: Valor final = Valor × (1 + P/100).
+            Exemplo: R$&nbsp;500,00 com 10% de aumento → 500 × 1,10 = R$&nbsp;550,00.
+            Para calcular um <strong>desconto percentual</strong>, use: Valor final = Valor × (1 − P/100).
+            Exemplo: R$&nbsp;500,00 com 10% de desconto → 500 × 0,90 = R$&nbsp;450,00.
+          </p>
+        </section>
+
+        <section>
+          <h2 className="text-xl font-semibold mb-3">Perguntas frequentes</h2>
+
+          <h3 className="font-semibold mt-4 mb-1">Como calcular 10% de um valor?</h3>
+          <p className="text-muted-foreground">
+            Divida o valor por 10. Por exemplo, 10% de R$&nbsp;350,00 é R$&nbsp;35,00.
+            No modo "Quanto é X% de Y" desta calculadora, basta digitar 10 no campo de percentual e o valor desejado no campo de base.
+          </p>
+
+          <h3 className="font-semibold mt-4 mb-1">Como saber quantos por cento um valor representa?</h3>
+          <p className="text-muted-foreground">
+            Use a fórmula: Percentual = (Valor Parcial ÷ Valor Total) × 100.
+            Exemplo: 45 é qual percentual de 180? → (45 ÷ 180) × 100 = 25%.
+            Use o modo "Que percentual é A de B" para calcular isso diretamente.
+          </p>
+
+          <h3 className="font-semibold mt-4 mb-1">Qual a diferença entre aumento e variação percentual?</h3>
+          <p className="text-muted-foreground">
+            O <strong>aumento percentual</strong> aplica uma taxa a um valor base para obter o novo valor.
+            A <strong>variação percentual</strong> compara dois valores já conhecidos e retorna a taxa de mudança entre eles — que pode ser positiva (alta) ou negativa (queda).
+          </p>
+        </section>
+      </div>
 
       <div className="mt-6">
         <Link href="/" className="inline-flex items-center text-sm text-muted-foreground hover:text-foreground transition-colors">
