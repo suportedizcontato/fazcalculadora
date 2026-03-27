@@ -117,6 +117,18 @@ export default function Home() {
         ))}
       </div>
 
+      <section>
+        <h2 className="text-xl font-display font-bold text-foreground mb-3">
+          Principais tipos de cálculos disponíveis
+        </h2>
+        <p className="text-muted-foreground leading-relaxed mb-3">
+          No Fazaconta, você encontra diversas calculadoras online para facilitar sua rotina. É possível calcular porcentagens, descobrir o IMC, estimar consumo de água e realizar conversões de medidas de forma simples e rápida.
+        </p>
+        <p className="text-muted-foreground leading-relaxed">
+          Nossas ferramentas são ideais para quem precisa fazer cálculos do dia a dia sem complicação, com resultados imediatos e interface fácil de usar.
+        </p>
+      </section>
+
       <section className="border-t border-border pt-8">
         <h2 className="text-xl font-display font-bold text-foreground mb-3">
           Todas as calculadoras
