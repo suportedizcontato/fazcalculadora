@@ -35,6 +35,17 @@ export default function ComoCalcularDesconto() {
         <h1 className="text-3xl sm:text-4xl font-display font-bold mb-3">
           Como Calcular Desconto Percentual
         </h1>
+        <p className="text-lg font-medium text-foreground mb-2">
+          Para calcular desconto percentual, use a fórmula: valor final = valor − (porcentagem × valor ÷ 100).
+        </p>
+        <p className="text-lg font-medium text-foreground mb-3">
+          Exemplo: 20% de desconto em R$&nbsp;200 resulta em R$&nbsp;160.
+        </p>
+        <ul className="list-disc list-inside space-y-1 text-base text-muted-foreground mb-4">
+          <li>10% de desconto em R$&nbsp;100 = R$&nbsp;90</li>
+          <li>20% de desconto em R$&nbsp;200 = R$&nbsp;160</li>
+          <li>30% de desconto em R$&nbsp;150 = R$&nbsp;105</li>
+        </ul>
         <p className="text-lg text-muted-foreground">
           Desconto percentual está presente em compras, promoções e ofertas do
           dia a dia. Entender como calcular desconto permite comparar preços,
