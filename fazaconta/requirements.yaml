@@ -1,0 +1,15 @@
+packages:
+  "framer-motion": "For smooth page transitions and micro-interactions"
+  "@hookform/resolvers": "For form validation with Zod"
+  "clsx": "Utility for constructing className strings"
+  "tailwind-merge": "Utility to merge tailwind classes"
+
+images:
+  - path: "artifacts/fazaconta/public/images/hero-abstract.png"
+    description: "A clean, modern, subtle abstract geometric mesh gradient background in light blues and teals, suitable for a trustworthy utility app header. Very light and airy."
+    aspect_ratio: "16:9"
+
+notes:
+  - All calculators are client-side only (no API requests).
+  - Using wouter for routing.
+  - Using Framer Motion for entry animations.
