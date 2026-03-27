@@ -42,9 +42,9 @@ export default function ComoCalcularAumentoPercentual() {
           Exemplo: 10% de aumento em R$&nbsp;200 resulta em R$&nbsp;220.
         </p>
         <ul className="list-disc list-inside space-y-1 text-base text-muted-foreground mb-4">
-          <li>10% de aumento em R$&nbsp;100 = R$&nbsp;110</li>
-          <li>20% de aumento em R$&nbsp;200 = R$&nbsp;240</li>
-          <li>15% de aumento em R$&nbsp;150 = R$&nbsp;172,50</li>
+          <li>Quanto é 10% de aumento em R$&nbsp;100? = R$&nbsp;110</li>
+          <li>Quanto é 8% de aumento em R$&nbsp;3.000? = R$&nbsp;3.240</li>
+          <li>Quanto é 15% de aumento em R$&nbsp;200? = R$&nbsp;230</li>
         </ul>
         <p className="text-lg text-muted-foreground">
           Aumento percentual está presente em reajustes de preço, aumentos
@@ -77,7 +77,8 @@ export default function ComoCalcularAumentoPercentual() {
             Como calcular aumento percentual?
           </h2>
           <p className="text-muted-foreground mb-3">
-            Para calcular o valor final após um aumento percentual, some a
+            Para calcular aumento percentual — seja para calcular aumento de
+            preço, calcular aumento de salário ou qualquer reajuste — some a
             porcentagem ao valor original usando a fórmula:
           </p>
           <div className="my-4 p-4 bg-muted rounded-xl text-center">
@@ -210,10 +211,10 @@ export default function ComoCalcularAumentoPercentual() {
             </div>
             <div>
               <h3 className="font-semibold mb-1">
-                Como saber o valor final com aumento?
+                Como saber o valor com aumento percentual?
               </h3>
               <p className="text-muted-foreground">
-                Use a fórmula: valor final = valor × (1 + aumento/100). Para
+                Use a fórmula: valor com aumento percentual = valor × (1 + aumento/100). Para
                 12% de aumento em R$&nbsp;300: 300 × 1,12 ={" "}
                 <strong>R$&nbsp;336</strong>.
               </p>
