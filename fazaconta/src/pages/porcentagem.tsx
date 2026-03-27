@@ -308,6 +308,7 @@ export default function Porcentagem() {
                 key={mode}
                 type="button"
                 data-cy={`mode-btn-${mode}`}
+                aria-pressed={activeMode === mode}
                 onClick={(e) => handleModeChange(mode, e)}
                 className={`px-3 py-2 rounded-lg text-sm font-medium transition-colors min-h-[44px] ${
                   activeMode === mode

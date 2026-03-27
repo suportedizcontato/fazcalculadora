@@ -1,11 +1,7 @@
 // ─── Task 1.1: Shared utilities ───────────────────────────────────────────────
 
 export function normalizeDecimal(raw: string): string {
-  // Brazilian format "3.500,00" → dots are thousands separators, comma is decimal
-  if (raw.includes(",")) {
-    return raw.replace(/\./g, "").replace(",", ".");
-  }
-  let s = raw.trim();
+  let s = raw.replace(/,/g, ".");
   if (s.startsWith(".")) s = "0" + s;
   return s;
 }
@@ -296,10 +292,6 @@ function makeIntHandlers(max: number) {
         el.selectionStart === el.selectionEnd
       ) e.preventDefault();
     },
-    onInput: (e: React.FormEvent<HTMLInputElement>) => {
-      const val = parseInt(e.currentTarget.value, 10);
-      if (!isNaN(val) && val > max) e.currentTarget.value = String(max);
-    },
   };
 }
 
@@ -536,22 +528,13 @@ export default function TrabalhistaPage() {
                   <Label htmlFor="r-salario" className="text-base font-semibold">
                     Salário Bruto (R$)
                   </Label>
-                  <Controller
-                    control={formRescisao.control}
-                    name="salario"
-                    render={({ field }) => (
-                      <Input
-                        id="r-salario"
-                        type="text"
-                        inputMode="numeric"
-                        placeholder="Ex: 3.500,00"
-                        value={field.value ?? ""}
-                        onChange={(e) => field.onChange(formatSalarioInput(e.target.value))}
-                        onBlur={field.onBlur}
-                        ref={field.ref}
-                        className="h-14 text-lg pl-4 bg-muted/50 focus:bg-background transition-colors"
-                      />
-                    )}
+                  <Input
+                    id="r-salario"
+                    type="text"
+                    inputMode="numeric"
+                    placeholder="Ex: 3.500,00"
+                    className="h-14 text-lg pl-4 bg-muted/50 focus:bg-background transition-colors"
+                    {...formRescisao.register("salario")}
                   />
                   {formRescisao.formState.errors.salario && (
                     <p role="alert" className="text-sm text-destructive">
@@ -618,7 +601,7 @@ export default function TrabalhistaPage() {
                     <Input
                       id="r-meses"
                       type="number"
-                      min={1}
+                      min={0}
                       max={11}
                       placeholder="Ex: 3"
                       {...makeIntHandlers(11)}
@@ -739,22 +722,13 @@ export default function TrabalhistaPage() {
                   <Label htmlFor="f-salario" className="text-base font-semibold">
                     Salário Bruto (R$)
                   </Label>
-                  <Controller
-                    control={formFerias.control}
-                    name="salario"
-                    render={({ field }) => (
-                      <Input
-                        id="f-salario"
-                        type="text"
-                        inputMode="numeric"
-                        placeholder="Ex: 3.500,00"
-                        value={field.value ?? ""}
-                        onChange={(e) => field.onChange(formatSalarioInput(e.target.value))}
-                        onBlur={field.onBlur}
-                        ref={field.ref}
-                        className="h-14 text-lg pl-4 bg-muted/50 focus:bg-background transition-colors"
-                      />
-                    )}
+                  <Input
+                    id="f-salario"
+                    type="text"
+                    inputMode="numeric"
+                    placeholder="Ex: 3.500,00"
+                    className="h-14 text-lg pl-4 bg-muted/50 focus:bg-background transition-colors"
+                    {...formFerias.register("salario")}
                   />
                   {formFerias.formState.errors.salario && (
                     <p role="alert" className="text-sm text-destructive">
@@ -828,22 +802,13 @@ export default function TrabalhistaPage() {
                   <Label htmlFor="d-salario" className="text-base font-semibold">
                     Salário Bruto (R$)
                   </Label>
-                  <Controller
-                    control={formDecimo.control}
-                    name="salario"
-                    render={({ field }) => (
-                      <Input
-                        id="d-salario"
-                        type="text"
-                        inputMode="numeric"
-                        placeholder="Ex: 3.500,00"
-                        value={field.value ?? ""}
-                        onChange={(e) => field.onChange(formatSalarioInput(e.target.value))}
-                        onBlur={field.onBlur}
-                        ref={field.ref}
-                        className="h-14 text-lg pl-4 bg-muted/50 focus:bg-background transition-colors"
-                      />
-                    )}
+                  <Input
+                    id="d-salario"
+                    type="text"
+                    inputMode="numeric"
+                    placeholder="Ex: 3.500,00"
+                    className="h-14 text-lg pl-4 bg-muted/50 focus:bg-background transition-colors"
+                    {...formDecimo.register("salario")}
                   />
                   {formDecimo.formState.errors.salario && (
                     <p role="alert" className="text-sm text-destructive">

@@ -243,6 +243,35 @@ describe("7.2 — Integração: componente Porcentagem", () => {
     });
   });
 
+  it("aria-pressed reflete o modo ativo antes e depois da troca", async () => {
+    const { user } = setup();
+
+    const btnPorcentagemDe = screen.getByRole("button", { name: /quanto é x% de y/i });
+    const btnAumento = screen.getByRole("button", { name: /aumento percentual/i });
+
+    // Estado inicial: porcentagem-de ativo, aumento inativo
+    expect(btnPorcentagemDe).toHaveAttribute("aria-pressed", "true");
+    expect(btnAumento).toHaveAttribute("aria-pressed", "false");
+
+    await user.click(btnAumento);
+
+    // Após troca: aumento ativo, porcentagem-de inativo
+    expect(btnAumento).toHaveAttribute("aria-pressed", "true");
+    expect(btnPorcentagemDe).toHaveAttribute("aria-pressed", "false");
+  });
+
+  it("foco automático no primeiro campo do formulário ao trocar de modo via clique", async () => {
+    const { user } = setup();
+
+    const btnAumento = screen.getByRole("button", { name: /aumento percentual/i });
+    await user.click(btnAumento);
+
+    // setFocus usa setTimeout; aguarda o foco ser aplicado
+    await waitFor(() => {
+      expect(document.activeElement).toBe(screen.getByLabelText(/valor original/i));
+    });
+  });
+
   it("valor negativo após blur exibe mensagem de erro", async () => {
     // This is blocked by the schema — negative value is caught by refine >= 0
     // But schema uses onBlur mode, and negative value entered as "-5" would first
