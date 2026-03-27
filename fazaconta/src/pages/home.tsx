@@ -56,36 +56,58 @@ export default function Home() {
     <div className="flex flex-col gap-10 sm:gap-16 pb-12">
       <section className="text-center max-w-2xl mx-auto mt-4 sm:mt-8">
         <h1 className="text-4xl sm:text-5xl md:text-6xl font-display font-extrabold text-foreground mb-4 sm:mb-6 tracking-tight">
-          Cálculos <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-accent">simples</span> para<br/> o seu dia a dia.
+          Calculadoras Online Gratuitas
         </h1>
         <p className="text-lg sm:text-xl text-muted-foreground leading-relaxed">
-          O Fazaconta Online reúne ferramentas rápidas, gratuitas e diretas ao ponto para você não perder tempo fazendo contas de cabeça.
+          Use nossas calculadoras online gratuitas para resolver cálculos do dia a dia de forma rápida e prática. Aqui você encontra ferramentas como calculadora de porcentagem, IMC, consumo de água e muito mais.
         </p>
+      </section>
+
+      <section>
+        <h2 className="text-2xl font-display font-bold text-foreground mb-4">
+          Calculadoras mais utilizadas
+        </h2>
+        <div className="flex flex-wrap gap-3">
+          <Link
+            href="/calculadora-porcentagem"
+            className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-emerald-50 dark:bg-emerald-900/20 text-emerald-700 dark:text-emerald-400 font-semibold hover:bg-emerald-100 dark:hover:bg-emerald-900/40 transition-colors"
+          >
+            <Percent className="w-4 h-4" />
+            Calculadora de Porcentagem
+          </Link>
+          <Link
+            href="/calculadora-imc"
+            className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-blue-50 dark:bg-blue-900/20 text-blue-700 dark:text-blue-400 font-semibold hover:bg-blue-100 dark:hover:bg-blue-900/40 transition-colors"
+          >
+            <Activity className="w-4 h-4" />
+            Calculadora de IMC
+          </Link>
+        </div>
       </section>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
         {CALCULATORS.map((calc, i) => (
-          <Link 
-            key={i} 
+          <Link
+            key={i}
             href={calc.href}
             className="group block outline-none"
           >
             <div className="h-full bg-card rounded-2xl p-6 sm:p-8 border border-border shadow-sm hover:shadow-xl hover:-translate-y-1 hover:border-primary/30 transition-all duration-300 relative overflow-hidden">
               {/* Subtle hover gradient background */}
               <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-              
+
               <div className={`w-14 h-14 rounded-xl flex items-center justify-center mb-6 ${calc.color} shadow-sm group-hover:scale-110 transition-transform duration-300`}>
                 {calc.icon}
               </div>
-              
+
               <h3 className="text-xl font-display font-bold text-foreground mb-2 group-hover:text-primary transition-colors">
                 {calc.title}
               </h3>
-              
+
               <p className="text-muted-foreground mb-6 line-clamp-2">
                 {calc.description}
               </p>
-              
+
               <div className="flex items-center text-sm font-semibold text-primary mt-auto">
                 Calcular agora
                 <ArrowRight className="w-4 h-4 ml-1 transform group-hover:translate-x-1 transition-transform" />
@@ -94,6 +116,43 @@ export default function Home() {
           </Link>
         ))}
       </div>
+
+      <section className="border-t border-border pt-8">
+        <h2 className="text-xl font-display font-bold text-foreground mb-3">
+          Todas as calculadoras
+        </h2>
+        <ul className="flex flex-col gap-2">
+          <li>
+            <Link href="/calculadora-porcentagem" className="text-primary hover:underline">
+              Calculadora de Porcentagem
+            </Link>
+          </li>
+          <li>
+            <Link href="/calculadora-imc" className="text-primary hover:underline">
+              Calculadora de IMC
+            </Link>
+          </li>
+          <li>
+            <Link href="/consumo-agua" className="text-primary hover:underline">
+              Calculadora de Consumo de Água
+            </Link>
+          </li>
+          <li>
+            <Link href="/conversor-xicaras" className="text-primary hover:underline">
+              Conversor de Xícaras
+            </Link>
+          </li>
+        </ul>
+      </section>
+
+      <section className="bg-muted/50 rounded-2xl p-6 sm:p-8">
+        <h2 className="text-xl font-display font-bold text-foreground mb-3">
+          Como usar nossas calculadoras
+        </h2>
+        <p className="text-muted-foreground leading-relaxed">
+          Nossas ferramentas foram desenvolvidas para facilitar cálculos do dia a dia, como porcentagens, índice de massa corporal e consumo de água. Basta escolher a calculadora desejada e inserir os valores para obter o resultado rapidamente.
+        </p>
+      </section>
     </div>
   );
 }
