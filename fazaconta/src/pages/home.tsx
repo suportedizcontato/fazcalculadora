@@ -117,15 +117,6 @@ export default function Home() {
         ))}
       </div>
 
-      <section>
-        <h2 className="text-xl font-display font-bold text-foreground mb-3">
-          Para que servem nossas calculadoras?
-        </h2>
-        <p className="text-muted-foreground leading-relaxed">
-          As calculadoras online do Fazaconta ajudam você a resolver cálculos comuns do dia a dia, como porcentagens, índices de massa corporal e conversões de medidas. Elas são ideais para estudantes, profissionais e qualquer pessoa que precise de resultados rápidos sem complicação.
-        </p>
-      </section>
-
       <section className="border-t border-border pt-8">
         <h2 className="text-xl font-display font-bold text-foreground mb-3">
           Explore nossas ferramentas
@@ -154,12 +145,12 @@ export default function Home() {
         </ul>
       </section>
 
-      <section className="bg-muted/50 rounded-2xl p-6 sm:p-8">
+      <section>
         <h2 className="text-xl font-display font-bold text-foreground mb-3">
-          Como usar nossas calculadoras
+          Para que servem nossas calculadoras?
         </h2>
         <p className="text-muted-foreground leading-relaxed">
-          Nossas ferramentas foram desenvolvidas para facilitar cálculos do dia a dia, como porcentagens, índice de massa corporal e consumo de água. Basta escolher a calculadora desejada e inserir os valores para obter o resultado rapidamente.
+          Use nossas calculadoras para calcular porcentagem, IMC, consumo de água e outros valores do dia a dia de forma rápida. Ideais para estudantes, profissionais e qualquer pessoa que precise de resultados precisos sem complicação.
         </p>
       </section>
 
