@@ -11,7 +11,7 @@ import { useEffect } from "react";
 
 const CALCULATORS = [
   {
-    href: "/imc",
+    href: "/calculadora-imc",
     title: "Calculadora de IMC",
     description: "Descubra se o seu peso está ideal para sua altura.",
     icon: <Activity className="w-6 h-6 text-primary" />,
@@ -150,7 +150,7 @@ export default function Home() {
           Para que servem nossas calculadoras?
         </h2>
         <p className="text-muted-foreground leading-relaxed">
-          Use nossas calculadoras para calcular porcentagem, IMC, consumo de água e outros valores do dia a dia de forma rápida. Ideais para estudantes, profissionais e qualquer pessoa que precise de resultados precisos sem complicação.
+          Cada calculadora foi criada para resolver um tipo específico de cálculo: porcentagem para descontos e aumentos, IMC para saúde e peso, consumo de água para hidratação diária, e conversão de xícaras para receitas. Sem cadastro, sem anúncio intrusivo, direto ao resultado.
         </p>
       </section>
 
