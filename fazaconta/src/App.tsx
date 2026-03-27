@@ -17,6 +17,7 @@ import ComoCalcularImc from "@/pages/como-calcular-imc";
 import ComoCalcularPorcentagem from "@/pages/como-calcular-porcentagem";
 import ComoCalcularDesconto from "@/pages/como-calcular-desconto";
 import ComoCalcularAumentoPercentual from "@/pages/como-calcular-aumento-percentual";
+import QuantoEXPorcentoDeY from "@/pages/quanto-e-x-porcento-de-y";
 
 const queryClient = new QueryClient();
 
@@ -35,6 +36,7 @@ function Router() {
         <Route path="/como-calcular-porcentagem" component={ComoCalcularPorcentagem} />
         <Route path="/como-calcular-desconto" component={ComoCalcularDesconto} />
         <Route path="/como-calcular-aumento-percentual" component={ComoCalcularAumentoPercentual} />
+        <Route path="/quanto-e-x-porcento-de-y" component={QuantoEXPorcentoDeY} />
         <Route component={NotFound} />
       </Switch>
     </Layout>
