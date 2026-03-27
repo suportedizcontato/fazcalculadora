@@ -5,5 +5,9 @@
   "framework": null,
   "env": {
     "CYPRESS_INSTALL_BINARY": "0"
-  }
+  },
+  "rewrites": [
+    { "source": "/sitemap.xml", "destination": "/sitemap.xml" },
+    { "source": "/(.*)", "destination": "/index.html" }
+  ]
 }
