@@ -401,6 +401,44 @@ export default function Porcentagem() {
         </section>
 
         <section>
+          <h2 className="text-xl font-semibold mb-4">Principais tipos de cálculo de porcentagem</h2>
+
+          <div className="space-y-5">
+            <div>
+              <h3 className="font-semibold mb-1">Quanto é X% de um valor?</h3>
+              <p className="text-muted-foreground">
+                Para calcular quanto é X% de um valor, multiplique o número pela porcentagem e divida por 100.
+                Exemplo: 10% de 200 = 20.
+              </p>
+            </div>
+
+            <div>
+              <h3 className="font-semibold mb-1">X é quantos % de Y?</h3>
+              <p className="text-muted-foreground">
+                Para descobrir quantos por cento um valor representa, divida a parte pelo total e multiplique por 100.
+                Exemplo: 50 é 25% de 200.
+              </p>
+            </div>
+
+            <div>
+              <h3 className="font-semibold mb-1">Como calcular aumento percentual?</h3>
+              <p className="text-muted-foreground">
+                Para calcular aumento percentual, some a porcentagem ao valor original.
+                Exemplo: 10% de aumento em 100 resulta em 110.
+              </p>
+            </div>
+
+            <div>
+              <h3 className="font-semibold mb-1">Como calcular desconto percentual?</h3>
+              <p className="text-muted-foreground">
+                Para calcular desconto, subtraia a porcentagem do valor original.
+                Exemplo: 10% de desconto em 100 resulta em 90.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <section>
           <h2 className="text-xl font-semibold mb-3">Como calcular aumento e desconto percentual?</h2>
           <p className="text-muted-foreground mb-2">
             Para calcular aumento percentual ou desconto percentual de um valor, use as fórmulas abaixo.
