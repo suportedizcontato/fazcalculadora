@@ -59,7 +59,7 @@ export default function Home() {
           Calculadoras Online Gratuitas
         </h1>
         <p className="text-lg sm:text-xl text-muted-foreground leading-relaxed">
-          Use nossas calculadoras online gratuitas para resolver cálculos do dia a dia de forma rápida e prática. Aqui você encontra ferramentas como calculadora de porcentagem, IMC, consumo de água e muito mais.
+          Use nossas calculadoras online gratuitas para calcular porcentagem, IMC, consumo de água e outros valores do dia a dia de forma rápida e prática. As ferramentas foram desenvolvidas para oferecer resultados imediatos com facilidade de uso.
         </p>
       </section>
 
@@ -119,39 +119,36 @@ export default function Home() {
 
       <section>
         <h2 className="text-xl font-display font-bold text-foreground mb-3">
-          Principais tipos de cálculos disponíveis
+          Para que servem nossas calculadoras?
         </h2>
-        <p className="text-muted-foreground leading-relaxed mb-3">
-          No Fazaconta, você encontra diversas calculadoras online para facilitar sua rotina. É possível calcular porcentagens, descobrir o IMC, estimar consumo de água e realizar conversões de medidas de forma simples e rápida.
-        </p>
         <p className="text-muted-foreground leading-relaxed">
-          Nossas ferramentas são ideais para quem precisa fazer cálculos do dia a dia sem complicação, com resultados imediatos e interface fácil de usar.
+          As calculadoras online do Fazaconta ajudam você a resolver cálculos comuns do dia a dia, como porcentagens, índices de massa corporal e conversões de medidas. Elas são ideais para estudantes, profissionais e qualquer pessoa que precise de resultados rápidos sem complicação.
         </p>
       </section>
 
       <section className="border-t border-border pt-8">
         <h2 className="text-xl font-display font-bold text-foreground mb-3">
-          Todas as calculadoras
+          Explore nossas ferramentas
         </h2>
         <ul className="flex flex-col gap-2">
           <li>
             <Link href="/calculadora-porcentagem" className="text-primary hover:underline">
-              Calculadora de Porcentagem
+              Calcular porcentagem online
             </Link>
           </li>
           <li>
             <Link href="/calculadora-imc" className="text-primary hover:underline">
-              Calculadora de IMC
+              Calcular IMC online
             </Link>
           </li>
           <li>
             <Link href="/consumo-agua" className="text-primary hover:underline">
-              Calculadora de Consumo de Água
+              Calcular consumo de água
             </Link>
           </li>
           <li>
             <Link href="/conversor-xicaras" className="text-primary hover:underline">
-              Conversor de Xícaras
+              Converter xícaras em ml
             </Link>
           </li>
         </ul>
@@ -163,6 +160,15 @@ export default function Home() {
         </h2>
         <p className="text-muted-foreground leading-relaxed">
           Nossas ferramentas foram desenvolvidas para facilitar cálculos do dia a dia, como porcentagens, índice de massa corporal e consumo de água. Basta escolher a calculadora desejada e inserir os valores para obter o resultado rapidamente.
+        </p>
+      </section>
+
+      <section>
+        <h2 className="text-xl font-display font-bold text-foreground mb-3">
+          Ferramentas simples para cálculos rápidos
+        </h2>
+        <p className="text-muted-foreground leading-relaxed">
+          Nosso objetivo é facilitar o acesso a calculadoras online gratuitas, permitindo que você faça cálculos com rapidez, precisão e sem complicações. Escolha a ferramenta desejada e obtenha o resultado em poucos segundos.
         </p>
       </section>
     </div>
