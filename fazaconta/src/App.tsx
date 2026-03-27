@@ -12,6 +12,9 @@ import Agua from "@/pages/agua";
 import Xicaras from "@/pages/xicaras";
 import Rescisao from "@/pages/rescisao";
 import Porcentagem from "@/pages/porcentagem";
+import CalculadoraImc from "@/pages/calculadora-imc";
+import ComoCalcularImc from "@/pages/como-calcular-imc";
+import ComoCalcularPorcentagem from "@/pages/como-calcular-porcentagem";
 
 const queryClient = new QueryClient();
 
@@ -25,6 +28,9 @@ function Router() {
         <Route path="/conversor-xicaras" component={Xicaras} />
         <Route path="/calculadora-trabalhista-clt" component={Rescisao} />
         <Route path="/calculadora-porcentagem" component={Porcentagem} />
+        <Route path="/calculadora-imc" component={CalculadoraImc} />
+        <Route path="/como-calcular-imc" component={ComoCalcularImc} />
+        <Route path="/como-calcular-porcentagem" component={ComoCalcularPorcentagem} />
         <Route component={NotFound} />
       </Switch>
     </Layout>
