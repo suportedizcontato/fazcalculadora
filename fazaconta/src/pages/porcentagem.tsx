@@ -376,12 +376,12 @@ export default function Porcentagem() {
         <section>
           <h2 className="text-xl font-semibold mb-3">Como calcular porcentagem?</h2>
           <p className="text-muted-foreground mb-3">
-            Para calcular porcentagem, divida a parte pelo total e multiplique por 100.
+            Para calcular porcentagem de um número, divida a parte pelo total e multiplique por 100.
           </p>
           <ul className="list-disc list-inside space-y-1 text-muted-foreground mb-3">
-            <li>10% de 200 = 20</li>
-            <li>25% de 400 = 100</li>
-            <li>50% de 80 = 40</li>
+            <li>Quanto é 10% de 200? = 20</li>
+            <li>Quanto é 15% de 300? = 45</li>
+            <li>Quanto é 30% de 150? = 45</li>
           </ul>
           <p className="text-muted-foreground">
             Use a fórmula: <strong>Resultado = Valor × Percentual ÷ 100</strong>.
@@ -402,6 +402,9 @@ export default function Porcentagem() {
 
         <section>
           <h2 className="text-xl font-semibold mb-3">Como calcular aumento e desconto percentual?</h2>
+          <p className="text-muted-foreground mb-2">
+            Para calcular aumento percentual ou desconto percentual de um valor, use as fórmulas abaixo.
+          </p>
           <p className="text-muted-foreground">
             Para calcular um <strong>aumento percentual</strong>, use: Valor final = Valor × (1 + P/100).
             Exemplo: R$&nbsp;500,00 com 10% de aumento → 500 × 1,10 = R$&nbsp;550,00.
