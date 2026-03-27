@@ -1,6 +1,6 @@
 {
   "buildCommand": "pnpm --filter fazaconta exec vite build --config vite.config.local.ts",
   "outputDirectory": "fazaconta/dist/public",
-  "installCommand": "corepack enable && pnpm install",
+  "installCommand": "corepack prepare pnpm@10.32.1 --activate && pnpm install",
   "framework": null
 }
