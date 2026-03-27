@@ -5,19 +5,21 @@
       <stop offset="100%" stop-color="#0EA5E9"/>
     </linearGradient>
   </defs>
-  <!-- Rounded square background, same as logo -->
   <rect width="180" height="180" rx="40" fill="url(#bg)"/>
-  <!-- Lucide Calculator icon (viewBox 24x24 → scaled 4x → 96px, centered at 42,42) -->
-  <g transform="translate(42, 42) scale(4)" stroke="white" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" fill="none">
-    <rect width="16" height="20" x="4" y="2" rx="2"/>
-    <line x1="8" x2="16" y1="6" y2="6"/>
-    <line x1="16" x2="16" y1="14" y2="18"/>
-    <path d="M16 10h.01"/>
-    <path d="M12 10h.01"/>
-    <path d="M8 10h.01"/>
-    <path d="M12 14h.01"/>
-    <path d="M8 14h.01"/>
-    <path d="M12 18h.01"/>
-    <path d="M8 18h.01"/>
-  </g>
+  <!-- Calculator body (white filled) -->
+  <rect x="50" y="32" width="80" height="116" rx="12" fill="white"/>
+  <!-- Display (blue) -->
+  <rect x="62" y="44" width="56" height="32" rx="6" fill="#2563EB"/>
+  <!-- 3x3 button grid -->
+  <!-- Row 1 -->
+  <rect x="62" y="86" width="14" height="12" rx="3" fill="#2563EB"/>
+  <rect x="83" y="86" width="14" height="12" rx="3" fill="#2563EB"/>
+  <rect x="104" y="86" width="14" height="12" rx="3" fill="#0EA5E9"/>
+  <!-- Row 2 -->
+  <rect x="62" y="103" width="14" height="12" rx="3" fill="#2563EB"/>
+  <rect x="83" y="103" width="14" height="12" rx="3" fill="#2563EB"/>
+  <rect x="104" y="103" width="14" height="12" rx="3" fill="#0EA5E9"/>
+  <!-- Row 3: 0 wide + enter key -->
+  <rect x="62" y="120" width="35" height="12" rx="3" fill="#2563EB"/>
+  <rect x="104" y="120" width="14" height="12" rx="3" fill="#0EA5E9"/>
 </svg>
