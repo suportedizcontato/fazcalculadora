@@ -85,7 +85,7 @@ export default function Home() {
         </div>
       </section>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
+      <section className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
         {CALCULATORS.map((calc, i) => (
           <Link
             key={i}
@@ -115,7 +115,7 @@ export default function Home() {
             </div>
           </Link>
         ))}
-      </div>
+      </section>
 
       <section className="border-t border-border pt-8">
         <h2 className="text-xl font-display font-bold text-foreground mb-3">
