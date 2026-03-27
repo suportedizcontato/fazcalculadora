@@ -1,3 +1,23 @@
 <svg width="180" height="180" viewBox="0 0 180 180" fill="none" xmlns="http://www.w3.org/2000/svg">
-<rect width="180" height="180" rx="36" fill="#FF3C00"/>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="180" y2="180" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#2563EB"/>
+      <stop offset="100%" stop-color="#0EA5E9"/>
+    </linearGradient>
+  </defs>
+  <!-- Rounded square background, same as logo -->
+  <rect width="180" height="180" rx="40" fill="url(#bg)"/>
+  <!-- Lucide Calculator icon (viewBox 24x24 → scaled 4x → 96px, centered at 42,42) -->
+  <g transform="translate(42, 42) scale(4)" stroke="white" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" fill="none">
+    <rect width="16" height="20" x="4" y="2" rx="2"/>
+    <line x1="8" x2="16" y1="6" y2="6"/>
+    <line x1="16" x2="16" y1="14" y2="18"/>
+    <path d="M16 10h.01"/>
+    <path d="M12 10h.01"/>
+    <path d="M8 10h.01"/>
+    <path d="M12 14h.01"/>
+    <path d="M8 14h.01"/>
+    <path d="M12 18h.01"/>
+    <path d="M8 18h.01"/>
+  </g>
 </svg>
