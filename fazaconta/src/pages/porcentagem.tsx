@@ -294,6 +294,9 @@ export default function Porcentagem() {
         <h1 className="text-3xl sm:text-4xl font-display font-bold mb-3">
           Calculadora de Porcentagem Online
         </h1>
+        <p className="text-lg font-medium text-foreground mb-2">
+          Para calcular porcentagem, use a fórmula: (parte ÷ total) × 100. Exemplo: 50 é 25% de 200.
+        </p>
         <p className="text-lg text-muted-foreground">
           Calcule porcentagens de forma rápida e gratuita. Use os cinco modos disponíveis: calcular quanto é X% de um valor, descobrir que percentual um valor representa de outro, calcular aumento percentual, calcular desconto percentual e calcular a variação percentual entre dois valores.
         </p>
@@ -372,8 +375,16 @@ export default function Porcentagem() {
       <div className="mt-10 space-y-8 text-base text-foreground">
         <section>
           <h2 className="text-xl font-semibold mb-3">Como calcular porcentagem?</h2>
+          <p className="text-muted-foreground mb-3">
+            Para calcular porcentagem, divida a parte pelo total e multiplique por 100.
+          </p>
+          <ul className="list-disc list-inside space-y-1 text-muted-foreground mb-3">
+            <li>10% de 200 = 20</li>
+            <li>25% de 400 = 100</li>
+            <li>50% de 80 = 40</li>
+          </ul>
           <p className="text-muted-foreground">
-            Para calcular a porcentagem de um valor, use a fórmula: <strong>Resultado = Valor × Percentual ÷ 100</strong>.
+            Use a fórmula: <strong>Resultado = Valor × Percentual ÷ 100</strong>.
             Por exemplo, para saber quanto é 15% de R$&nbsp;200,00, basta calcular 200 × 15 ÷ 100 = R$&nbsp;30,00.
             A calculadora acima faz esse cálculo automaticamente assim que você preenche os campos.
           </p>
