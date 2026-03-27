@@ -25,21 +25,21 @@ const CALCULATORS = [
     color: "bg-cyan-50 dark:bg-cyan-900/20"
   },
   {
-    href: "/conversao-xicaras",
+    href: "/conversor-xicaras",
     title: "Conversor de Xícaras",
     description: "Converta xícaras de receita para mililitros e copos.",
     icon: <Coffee className="w-6 h-6 text-amber-600" />,
     color: "bg-amber-50 dark:bg-amber-900/20"
   },
   {
-    href: "/rescisao-clt",
+    href: "/calculadora-trabalhista-clt",
     title: "Calculadora Trabalhista CLT",
     description: "Estime rescisão, férias proporcionais e 13º salário de forma rápida e sem cadastro.",
     icon: <Briefcase className="w-6 h-6 text-indigo-500" />,
     color: "bg-indigo-50 dark:bg-indigo-900/20"
   },
   {
-    href: "/porcentagem",
+    href: "/calculadora-porcentagem",
     title: "Calculadora de Porcentagem",
     description: "Calcule porcentagens, aumentos, descontos e variações de forma rápida.",
     icon: <Percent className="w-6 h-6 text-emerald-500" />,

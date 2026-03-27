@@ -11,7 +11,6 @@ import Imc from "@/pages/imc";
 import Agua from "@/pages/agua";
 import Xicaras from "@/pages/xicaras";
 import Rescisao from "@/pages/rescisao";
-import Aposentadoria from "@/pages/aposentadoria";
 import Porcentagem from "@/pages/porcentagem";
 
 const queryClient = new QueryClient();
@@ -23,10 +22,9 @@ function Router() {
         <Route path="/" component={Home} />
         <Route path="/imc" component={Imc} />
         <Route path="/consumo-agua" component={Agua} />
-        <Route path="/conversao-xicaras" component={Xicaras} />
-        <Route path="/rescisao-clt" component={Rescisao} />
-        <Route path="/aposentadoria-inss" component={Aposentadoria} />
-        <Route path="/porcentagem" component={Porcentagem} />
+        <Route path="/conversor-xicaras" component={Xicaras} />
+        <Route path="/calculadora-trabalhista-clt" component={Rescisao} />
+        <Route path="/calculadora-porcentagem" component={Porcentagem} />
         <Route component={NotFound} />
       </Switch>
     </Layout>
