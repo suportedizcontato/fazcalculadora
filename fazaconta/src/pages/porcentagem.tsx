@@ -379,9 +379,9 @@ export default function Porcentagem() {
             Para calcular porcentagem de um número, divida a parte pelo total e multiplique por 100.
           </p>
           <ul className="list-disc list-inside space-y-1 text-muted-foreground mb-3">
-            <li>Quanto é 10% de 200? = 20</li>
-            <li>Quanto é 15% de 300? = 45</li>
-            <li>Quanto é 30% de 150? = 45</li>
+            <li>Quanto é 10% de 200? é igual a <strong>20</strong></li>
+            <li>Quanto é 15% de 300? é igual a <strong>45</strong></li>
+            <li>Quanto é 30% de 150? é igual a <strong>45</strong></li>
           </ul>
           <p className="text-muted-foreground">
             Use a fórmula: <strong>Resultado = Valor × Percentual ÷ 100</strong>.
@@ -405,34 +405,34 @@ export default function Porcentagem() {
 
           <div className="space-y-5">
             <div>
-              <h3 className="font-semibold mb-1">Quanto é X% de um valor?</h3>
+              <h3 className="font-semibold mb-1">Quanto é X% de um valor? (exemplos práticos)</h3>
               <p className="text-muted-foreground">
                 Para calcular quanto é X% de um valor, multiplique o número pela porcentagem e divida por 100.
-                Exemplo: 10% de 200 = 20.
+                Exemplo: 10% de 200 é igual a <strong>20</strong>.
               </p>
             </div>
 
             <div>
-              <h3 className="font-semibold mb-1">X é quantos % de Y?</h3>
+              <h3 className="font-semibold mb-1">X é quantos % de Y? (como descobrir)</h3>
               <p className="text-muted-foreground">
                 Para descobrir quantos por cento um valor representa, divida a parte pelo total e multiplique por 100.
-                Exemplo: 50 é 25% de 200.
+                Exemplo: 50 é <strong>25%</strong> de 200.
               </p>
             </div>
 
             <div>
-              <h3 className="font-semibold mb-1">Como calcular aumento percentual?</h3>
+              <h3 className="font-semibold mb-1">Como calcular aumento percentual? (fórmula rápida)</h3>
               <p className="text-muted-foreground">
                 Para calcular aumento percentual, some a porcentagem ao valor original.
-                Exemplo: 10% de aumento em 100 resulta em 110.
+                Exemplo: 10% de aumento em 100 resulta em <strong>110</strong>.
               </p>
             </div>
 
             <div>
-              <h3 className="font-semibold mb-1">Como calcular desconto percentual?</h3>
+              <h3 className="font-semibold mb-1">Como calcular desconto percentual? (fórmula rápida)</h3>
               <p className="text-muted-foreground">
                 Para calcular desconto, subtraia a porcentagem do valor original.
-                Exemplo: 10% de desconto em 100 resulta em 90.
+                Exemplo: 10% de desconto em 100 resulta em <strong>90</strong>.
               </p>
             </div>
           </div>
