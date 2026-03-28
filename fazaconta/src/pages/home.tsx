@@ -117,6 +117,8 @@ export default function Home() {
         ))}
       </section>
 
+      <div className="ad-placeholder" />
+
       <section className="border-t border-border pt-8">
         <h2 className="text-xl font-display font-bold text-foreground mb-3">
           Explore nossas ferramentas

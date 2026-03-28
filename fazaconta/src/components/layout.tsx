@@ -69,6 +69,12 @@ export function Layout({ children }: LayoutProps) {
           <p className="text-sm text-muted-foreground text-center">
             © {new Date().getFullYear()} - Calculadoras gratuitas e ferramentas para o dia a dia.
           </p>
+          <Link
+            href="/politica-de-privacidade"
+            className="text-sm text-muted-foreground hover:text-foreground transition-colors"
+          >
+            Política de Privacidade
+          </Link>
         </div>
       </footer>
     </div>

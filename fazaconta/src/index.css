@@ -135,6 +135,12 @@
   --ring: 224 71.4% 4.1%;
 }
 
+.ad-placeholder {
+  width: 100%;
+  min-height: 90px;
+  background-color: transparent;
+}
+
 @layer base {
   * {
     @apply border-border;

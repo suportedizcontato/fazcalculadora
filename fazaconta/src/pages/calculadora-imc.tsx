@@ -236,6 +236,15 @@ export default function CalculadoraImc() {
         </section>
       </div>
 
+      <section className="mt-10 text-base text-foreground">
+        <h2 className="text-xl font-semibold mb-3">Produtos que podem te ajudar</h2>
+        <ul className="list-disc list-inside space-y-2 text-muted-foreground">
+          <li>Garrafa de água para controle diário</li>
+          <li>Balança digital</li>
+          <li>Aplicativos de saúde</li>
+        </ul>
+      </section>
+
       <div className="mt-6">
         <Link
           href="/"

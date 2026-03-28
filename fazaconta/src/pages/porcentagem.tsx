@@ -302,6 +302,8 @@ export default function Porcentagem() {
         </p>
       </div>
 
+      <div className="ad-placeholder" />
+
       <Card className="border-border shadow-md">
         <CardContent className="p-6 sm:p-8">
           {/* Mode selector */}
@@ -371,6 +373,8 @@ export default function Porcentagem() {
           </div>
         </CardContent>
       </Card>
+
+      <div className="ad-placeholder mt-6" />
 
       <div className="mt-10 space-y-8 text-base text-foreground">
         <section>
@@ -450,6 +454,8 @@ export default function Porcentagem() {
             Exemplo: R$&nbsp;500,00 com 10% de desconto → 500 × 0,90 = R$&nbsp;450,00.
           </p>
         </section>
+
+        <div className="ad-placeholder" />
 
         <section>
           <h2 className="text-xl font-semibold mb-3">Perguntas frequentes</h2>
