@@ -2,6 +2,7 @@ import { Link, useLocation } from "wouter";
 import { Calculator, ArrowLeft } from "lucide-react";
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
+import { useCanonical } from "@/hooks/use-canonical";
 
 interface LayoutProps {
   children: React.ReactNode;
@@ -10,6 +11,7 @@ interface LayoutProps {
 export function Layout({ children }: LayoutProps) {
   const [location] = useLocation();
   const isHome = location === "/";
+  useCanonical();
 
   return (
     <div className="min-h-screen flex flex-col relative overflow-hidden bg-background">

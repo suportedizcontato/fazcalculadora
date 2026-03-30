@@ -6,6 +6,19 @@
   "env": {
     "CYPRESS_INSTALL_BINARY": "0"
   },
+  "redirects": [
+    {
+      "source": "/:path*",
+      "has": [{ "type": "host", "value": "fazacontaonline.com" }],
+      "destination": "https://www.fazacontaonline.com/:path*",
+      "permanent": true
+    },
+    {
+      "source": "/:path+/",
+      "destination": "/:path*",
+      "permanent": true
+    }
+  ],
   "rewrites": [
     { "source": "/sitemap.xml", "destination": "/sitemap.xml" },
     { "source": "/(.*)", "destination": "/index.html" }
