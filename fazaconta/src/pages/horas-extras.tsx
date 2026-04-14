@@ -3,7 +3,6 @@ import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { Clock } from "lucide-react";
 import { Link } from "wouter";
-import { Layout } from "@/components/layout";
 import { PageMeta } from "@/components/page-meta";
 import { ResultBox } from "@/components/result-box";
 import { Input } from "@/components/ui/input";
@@ -307,7 +306,7 @@ export default function HorasExtrasPage() {
   }
 
   return (
-    <Layout>
+    <div>
       <PageMeta
         title="Calculadora de Horas Extras e Adicional Noturno CLT | Fazaconta"
         description="Calcule o valor das horas extras (50% e 100%), adicional noturno e cumulativos pela CLT. Gratuito, sem cadastro, resultado imediato."
@@ -640,6 +639,6 @@ export default function HorasExtrasPage() {
         </section>
 
       </div>
-    </Layout>
+    </div>
   );
 }

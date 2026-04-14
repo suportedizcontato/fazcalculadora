@@ -7,7 +7,6 @@ import { useForm, useFieldArray, Controller } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { Clock, Plus, Trash2 } from "lucide-react";
 import { Link } from "wouter";
-import { Layout } from "@/components/layout";
 import { PageMeta } from "@/components/page-meta";
 import { ResultBox } from "@/components/result-box";
 import { Input } from "@/components/ui/input";
@@ -159,7 +158,7 @@ export default function BancoDeHorasPage() {
       : "info";
 
   return (
-    <Layout>
+    <div>
       <PageMeta
         title="Calculadora de Banco de Horas CLT | Saldo e Valor Monetário | Fazaconta"
         description="Calcule o saldo do banco de horas, o valor monetário das horas acumuladas e verifique alertas de prazo e limite diário pela CLT. Gratuito e sem cadastro."
@@ -746,7 +745,7 @@ export default function BancoDeHorasPage() {
         </section>
 
       </div>
-    </Layout>
+    </div>
   );
 }
 

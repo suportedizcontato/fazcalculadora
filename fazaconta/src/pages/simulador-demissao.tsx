@@ -288,7 +288,6 @@ import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { Briefcase } from "lucide-react";
 import { Link } from "wouter";
-import { Layout } from "@/components/layout";
 import { PageMeta } from "@/components/page-meta";
 import { ResultBox } from "@/components/result-box";
 import { Input } from "@/components/ui/input";
@@ -548,7 +547,7 @@ export default function SimuladorDemissaoPage() {
       : 0;
 
   return (
-    <Layout>
+    <div>
       <PageMeta
         title="Simulador de Demissão CLT — Compare 3 Cenários | Fazaconta"
         description="Simule os três cenários de demissão (sem justa causa, pedido de demissão e acordo mútuo) e compare as verbas rescisórias gratuitamente."
@@ -879,6 +878,6 @@ export default function SimuladorDemissaoPage() {
         </section>
 
       </div>
-    </Layout>
+    </div>
   );
 }
