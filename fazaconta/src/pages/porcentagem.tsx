@@ -4,6 +4,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import * as z from "zod";
 import { Link } from "wouter";
 import { ResultBox, type ResultVariant } from "@/components/result-box";
+import { PageMeta } from "@/components/page-meta";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Button } from "@/components/ui/button";
@@ -181,27 +182,31 @@ interface CalcResult {
 
 // ─── Component ────────────────────────────────────────────────────────────────
 
+const PORCENTAGEM_FAQ = [
+  {
+    question: "Como calcular 10% de um valor?",
+    answer: "Divida o valor por 10. Por exemplo, 10% de R$ 350,00 é R$ 35,00.",
+  },
+  {
+    question: "Como saber quantos por cento um valor representa?",
+    answer:
+      "Use a fórmula: Percentual = (Valor Parcial ÷ Valor Total) × 100. Exemplo: 45 é 25% de 180.",
+  },
+  {
+    question: "Qual a diferença entre aumento e variação percentual?",
+    answer:
+      "O aumento percentual aplica uma taxa a um valor base para obter o novo valor. A variação percentual compara dois valores já conhecidos e retorna a taxa de mudança entre eles.",
+  },
+  {
+    question: "Como calcular desconto percentual?",
+    answer:
+      "Multiplique o valor original pela porcentagem de desconto e divida por 100. Subtraia o resultado do valor original. Exemplo: 20% de desconto em R$ 150,00 = R$ 30,00 de desconto = R$ 120,00.",
+  },
+];
+
 export default function Porcentagem() {
   const [activeMode, setActiveMode] = useState<CalcMode>("porcentagem-de");
   const [result, setResult] = useState<CalcResult | null>(null);
-
-  useEffect(() => {
-    document.title = "Calculadora de Porcentagem Online Grátis | Fazaconta";
-
-    let metaDesc = document.querySelector<HTMLMetaElement>('meta[name="description"]');
-    if (!metaDesc) {
-      metaDesc = document.createElement("meta");
-      metaDesc.name = "description";
-      document.head.appendChild(metaDesc);
-    }
-    const previousContent = metaDesc.content;
-    metaDesc.content =
-      "Calcule porcentagem de forma rápida e fácil. Descubra valores, descontos e aumentos percentuais com nossa calculadora online gratuita.";
-
-    return () => {
-      metaDesc!.content = previousContent;
-    };
-  }, []);
 
   const schema = schemas[activeMode];
 
@@ -287,6 +292,11 @@ export default function Porcentagem() {
 
   return (
     <div className="max-w-2xl mx-auto">
+      <PageMeta
+        title="Calculadora de Porcentagem Online Grátis | Fazaconta"
+        description="Calcule porcentagem de forma rápida e fácil. Descubra valores, descontos e aumentos percentuais com nossa calculadora online gratuita."
+        faq={PORCENTAGEM_FAQ}
+      />
       <div className="mb-8">
         <div className="inline-flex items-center justify-center p-3 bg-emerald-50 dark:bg-emerald-900/20 rounded-xl text-emerald-600 mb-4">
           <Percent className="w-8 h-8" />
@@ -481,11 +491,14 @@ export default function Porcentagem() {
         </section>
       </div>
 
-      <div className="mt-6">
+      <div className="mt-6 flex items-center justify-between flex-wrap gap-2">
         <Link href="/" className="inline-flex items-center text-sm text-muted-foreground hover:text-foreground transition-colors">
           <ArrowLeft className="w-4 h-4 mr-1" />
           Voltar para a página inicial
         </Link>
+        <p className="text-xs text-muted-foreground">
+          Revisado pela equipe Fazaconta · Abril de 2026
+        </p>
       </div>
     </div>
   );

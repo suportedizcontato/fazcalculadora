@@ -82,7 +82,7 @@ describe("7.2 — Integração: componente Porcentagem", () => {
     await waitFor(() => {
       expect(screen.getAllByRole("alert").length).toBeGreaterThan(0);
     });
-    expect(screen.queryByText(/é igual a/i)).not.toBeInTheDocument();
+    expect(screen.queryByText(/\d+,\d+% de \d+,\d+ é igual a/i)).not.toBeInTheDocument();
   });
 
   it("submissão válida no modo 'porcentagem-de' exibe ResultBox com valor e explicação", async () => {
@@ -116,7 +116,7 @@ describe("7.2 — Integração: componente Porcentagem", () => {
     await user.type(inputs[0], "5");
 
     await waitFor(() => {
-      expect(screen.queryByText(/é igual a/i)).not.toBeInTheDocument();
+      expect(screen.queryByText(/\d+,\d+% de \d+,\d+ é igual a/i)).not.toBeInTheDocument();
     });
   });
 
@@ -137,7 +137,7 @@ describe("7.2 — Integração: componente Porcentagem", () => {
     await user.click(modeBtn);
 
     await waitFor(() => {
-      expect(screen.queryByText(/é igual a/i)).not.toBeInTheDocument();
+      expect(screen.queryByText(/\d+,\d+% de \d+,\d+ é igual a/i)).not.toBeInTheDocument();
     });
     // New mode fields should appear
     expect(screen.getByLabelText(/valor original/i)).toBeInTheDocument();

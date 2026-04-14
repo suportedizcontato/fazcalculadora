@@ -1,33 +1,23 @@
-import { useEffect } from "react";
 import { Link } from "wouter";
 import { TrendingUp, ArrowRight } from "lucide-react";
+import { PageMeta } from "@/components/page-meta";
+
+const FAQ_AUMENTO = [
+  { question: "Como calcular aumento percentual?", answer: "Multiplique o valor pelo percentual de aumento e divida por 100. Some o resultado ao valor original. Exemplo: 10% de aumento em R$ 500 → aumento = R$ 50 → valor final = R$ 550." },
+  { question: "Como saber o valor com aumento percentual?", answer: "Use a fórmula: valor com aumento = valor × (1 + aumento/100). Para 12% de aumento em R$ 300: 300 × 1,12 = R$ 336." },
+  { question: "Como calcular reajuste de preço?", answer: "Reajuste de preço funciona como aumento percentual. Se um produto custa R$ 120 e será reajustado em 7%: 120 × 1,07 = R$ 128,40." },
+  { question: "Como calcular aumento de salário?", answer: "Aplique o percentual de reajuste sobre o salário atual. Salário de R$ 4.000 com aumento de 5%: 4.000 × 1,05 = R$ 4.200. O aumento em reais é R$ 200." },
+];
 
 export default function ComoCalcularAumentoPercentual() {
-  useEffect(() => {
-    const prevTitle = document.title;
-    document.title =
-      "Como Calcular Aumento Percentual | Fórmula e Exemplos | Fazaconta";
-
-    let metaDesc = document.querySelector<HTMLMetaElement>(
-      'meta[name="description"]'
-    );
-    if (!metaDesc) {
-      metaDesc = document.createElement("meta");
-      metaDesc.name = "description";
-      document.head.appendChild(metaDesc);
-    }
-    const prevContent = metaDesc.content;
-    metaDesc.content =
-      "Aprenda como calcular aumento percentual com fórmula e exemplos práticos. Descubra o valor final após reajustes de forma simples.";
-
-    return () => {
-      document.title = prevTitle;
-      metaDesc!.content = prevContent;
-    };
-  }, []);
 
   return (
     <div className="max-w-2xl mx-auto">
+      <PageMeta
+        title="Como Calcular Aumento Percentual | Fórmula e Exemplos | Fazaconta"
+        description="Aprenda como calcular aumento percentual com fórmula e exemplos práticos. Descubra o valor final após reajustes de forma simples."
+        faq={FAQ_AUMENTO}
+      />
       <div className="mb-8">
         <div className="inline-flex items-center justify-center p-3 bg-blue-50 dark:bg-blue-900/20 rounded-xl text-blue-600 mb-4">
           <TrendingUp className="w-8 h-8" />

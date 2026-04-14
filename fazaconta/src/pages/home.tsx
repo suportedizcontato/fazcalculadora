@@ -5,9 +5,12 @@ import {
   Coffee,
   Briefcase,
   Percent,
+  Clock,
+  TrendingUp,
+  UserMinus,
   ArrowRight
 } from "lucide-react";
-import { useEffect } from "react";
+import { PageMeta } from "@/components/page-meta";
 
 const CALCULATORS = [
   {
@@ -39,6 +42,27 @@ const CALCULATORS = [
     color: "bg-indigo-50 dark:bg-indigo-900/20"
   },
   {
+    href: "/banco-de-horas",
+    title: "Banco de Horas",
+    description: "Calcule o saldo acumulado do banco de horas, o valor monetário e os alertas de prazo legal.",
+    icon: <Clock className="w-6 h-6 text-violet-500" />,
+    color: "bg-violet-50 dark:bg-violet-900/20"
+  },
+  {
+    href: "/calculadora-horas-extras",
+    title: "Horas Extras e Adicional Noturno",
+    description: "Calcule o valor das horas extras (50% ou 100%) e do adicional noturno pela CLT.",
+    icon: <TrendingUp className="w-6 h-6 text-orange-500" />,
+    color: "bg-orange-50 dark:bg-orange-900/20"
+  },
+  {
+    href: "/simulador-demissao",
+    title: "Simulador de Demissão",
+    description: "Compare rescisão sem justa causa, pedido de demissão e acordo mútuo lado a lado.",
+    icon: <UserMinus className="w-6 h-6 text-rose-500" />,
+    color: "bg-rose-50 dark:bg-rose-900/20"
+  },
+  {
     href: "/calculadora-porcentagem",
     title: "Calculadora de Porcentagem",
     description: "Calcule porcentagens, aumentos, descontos e variações de forma rápida.",
@@ -48,12 +72,12 @@ const CALCULATORS = [
 ];
 
 export default function Home() {
-  useEffect(() => {
-    document.title = "Fazaconta Online - Calculadoras simples para o dia a dia";
-  }, []);
-
   return (
     <div className="flex flex-col gap-10 sm:gap-16 pb-12">
+      <PageMeta
+        title="Fazaconta Online - Calculadoras simples para o dia a dia"
+        description="Calculadoras online gratuitas para brasileiros: IMC, porcentagem, consumo de água, xícaras, rescisão CLT e muito mais. Sem cadastro, resultado imediato."
+      />
       <section className="text-center max-w-2xl mx-auto mt-4 sm:mt-8">
         <h1 className="text-4xl sm:text-5xl md:text-6xl font-display font-extrabold text-foreground mb-4 sm:mb-6 tracking-tight">
           Calculadoras Online Gratuitas

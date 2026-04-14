@@ -4,6 +4,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import * as z from "zod";
 import { Link } from "wouter";
 import { ResultBox } from "@/components/result-box";
+import { PageMeta } from "@/components/page-meta";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Button } from "@/components/ui/button";
@@ -26,28 +27,31 @@ const imcFormSchema = z.object({
 
 type FormData = z.infer<typeof imcFormSchema>;
 
+const IMC_FAQ = [
+  {
+    question: "O que é IMC?",
+    answer:
+      "IMC significa Índice de Massa Corporal. É uma medida numérica calculada a partir do peso e da altura que classifica o estado nutricional de uma pessoa em categorias como abaixo do peso, peso normal, sobrepeso e obesidade.",
+  },
+  {
+    question: "Como calcular IMC?",
+    answer:
+      "Divida seu peso em quilogramas pelo quadrado da sua altura em metros. Exemplo: 80 kg ÷ (1,80 × 1,80) = 24,7.",
+  },
+  {
+    question: "Qual é o IMC ideal?",
+    answer:
+      "Segundo a Organização Mundial da Saúde (OMS), o IMC ideal para adultos está entre 18,5 e 24,9, classificado como Peso normal.",
+  },
+  {
+    question: "IMC é confiável?",
+    answer:
+      "O IMC é uma ferramenta de triagem prática, mas não leva em conta fatores como percentual de gordura ou massa muscular. Sempre consulte um profissional de saúde para avaliação completa.",
+  },
+];
+
 export default function CalculadoraImc() {
   const [result, setResult] = useState<ReturnType<typeof classifyBMI> | null>(null);
-
-  useEffect(() => {
-    const prevTitle = document.title;
-    document.title = "Calculadora de IMC Online Grátis | Fazaconta";
-
-    let metaDesc = document.querySelector<HTMLMetaElement>('meta[name="description"]');
-    if (!metaDesc) {
-      metaDesc = document.createElement("meta");
-      metaDesc.name = "description";
-      document.head.appendChild(metaDesc);
-    }
-    const prevContent = metaDesc.content;
-    metaDesc.content =
-      "Calcule seu IMC de forma rápida e fácil. Descubra se você está no peso ideal com nossa calculadora online gratuita.";
-
-    return () => {
-      document.title = prevTitle;
-      metaDesc!.content = prevContent;
-    };
-  }, []);
 
   const {
     register,
@@ -79,6 +83,11 @@ export default function CalculadoraImc() {
 
   return (
     <div className="max-w-2xl mx-auto">
+      <PageMeta
+        title="Calculadora de IMC Online Grátis | Fazaconta"
+        description="Calcule seu IMC de forma rápida e fácil. Descubra se você está no peso ideal com nossa calculadora online gratuita."
+        faq={IMC_FAQ}
+      />
       <div className="mb-8">
         <div className="inline-flex items-center justify-center p-3 bg-blue-50 rounded-xl text-blue-600 mb-4">
           <Activity className="w-8 h-8" />
@@ -237,15 +246,24 @@ export default function CalculadoraImc() {
       </div>
 
       <section className="mt-10 text-base text-foreground">
-        <h2 className="text-xl font-semibold mb-3">Produtos que podem te ajudar</h2>
-        <ul className="list-disc list-inside space-y-2 text-muted-foreground">
-          <li>Garrafa de água para controle diário</li>
-          <li>Balança digital</li>
-          <li>Aplicativos de saúde</li>
+        <h2 className="text-xl font-semibold mb-3">Outras calculadoras de saúde</h2>
+        <ul className="space-y-2 text-muted-foreground list-disc list-inside">
+          <li>
+            <Link href="/consumo-agua" className="text-primary hover:underline">
+              Calculadora de consumo de água diário
+            </Link>{" "}
+            — descubra quantos litros você deve beber por dia.
+          </li>
+          <li>
+            <Link href="/calculadora-porcentagem" className="text-primary hover:underline">
+              Calculadora de porcentagem
+            </Link>{" "}
+            — calcule descontos, aumentos e variações percentuais.
+          </li>
         </ul>
       </section>
 
-      <div className="mt-6">
+      <div className="mt-6 flex items-center justify-between flex-wrap gap-2">
         <Link
           href="/"
           className="inline-flex items-center text-sm text-muted-foreground hover:text-foreground transition-colors"
@@ -253,6 +271,9 @@ export default function CalculadoraImc() {
           <ArrowLeft className="w-4 h-4 mr-1" />
           Voltar para a página inicial
         </Link>
+        <p className="text-xs text-muted-foreground">
+          Revisado pela equipe Fazaconta · Abril de 2026
+        </p>
       </div>
     </div>
   );

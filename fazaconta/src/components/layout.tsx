@@ -1,6 +1,5 @@
 import { Link, useLocation } from "wouter";
 import { Calculator, ArrowLeft } from "lucide-react";
-import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { useCanonical } from "@/hooks/use-canonical";
 
@@ -52,14 +51,9 @@ export function Layout({ children }: LayoutProps) {
             </Button>
           </div>
         )}
-        <motion.div
-          key={location}
-          initial={{ opacity: 0, y: 15 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.4, ease: "easeOut" }}
-        >
+        <div key={location} className="animate-page-enter">
           {children}
-        </motion.div>
+        </div>
       </main>
 
       <footer className="border-t bg-card py-8 mt-auto z-10 relative">
@@ -71,12 +65,20 @@ export function Layout({ children }: LayoutProps) {
           <p className="text-sm text-muted-foreground text-center">
             © {new Date().getFullYear()} - Calculadoras gratuitas e ferramentas para o dia a dia.
           </p>
-          <Link
-            href="/politica-de-privacidade"
-            className="text-sm text-muted-foreground hover:text-foreground transition-colors"
-          >
-            Política de Privacidade
-          </Link>
+          <div className="flex items-center gap-4">
+            <Link
+              href="/sobre"
+              className="text-sm text-muted-foreground hover:text-foreground transition-colors"
+            >
+              Sobre
+            </Link>
+            <Link
+              href="/politica-de-privacidade"
+              className="text-sm text-muted-foreground hover:text-foreground transition-colors"
+            >
+              Política de Privacidade
+            </Link>
+          </div>
         </div>
       </footer>
     </div>

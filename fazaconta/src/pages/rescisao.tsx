@@ -202,6 +202,7 @@ export function buildNarrativeDecimo(input: DecimoInput, result: DecimoResult): 
 // ─────────────────────────────────────────────────────────────────────────────
 
 import React, { useState, useEffect } from "react";
+import { PageMeta } from "@/components/page-meta";
 import { useForm, Controller, type FieldErrors } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { ResultBox } from "@/components/result-box";
@@ -219,6 +220,7 @@ import {
 } from "@/components/ui/select";
 import { Checkbox } from "@/components/ui/checkbox";
 import { Briefcase } from "lucide-react";
+import { Link } from "wouter";
 import {
   rescisaoSchema,
   feriasSchema,
@@ -301,9 +303,6 @@ export default function TrabalhistaPage() {
   const [activeModule, setActiveModule] = useState<ModuleKey>("rescisao");
   const [result, setResult] = useState<PageResult>(null);
 
-  useEffect(() => {
-    document.title = "Calculadora Trabalhista CLT | Fazaconta Online";
-  }, []);
 
   // ── Three independent form instances ──────────────────────────────────────
 
@@ -490,6 +489,28 @@ export default function TrabalhistaPage() {
 
   return (
     <div className="max-w-2xl mx-auto">
+      <PageMeta
+        title="Calculadora Trabalhista CLT | Rescisão, Férias e 13º | Fazaconta"
+        description="Calcule rescisão, férias proporcionais e 13º salário pela CLT de forma rápida, gratuita e sem cadastro."
+        faq={[
+          {
+            question: "Quais verbas entram na rescisão sem justa causa?",
+            answer: "Na demissão sem justa causa o trabalhador tem direito a: saldo de salário, férias proporcionais com 1/3, 13º proporcional, aviso prévio (trabalhado ou indenizado) e multa de 40% sobre o saldo do FGTS.",
+          },
+          {
+            question: "Qual a diferença entre demissão sem justa causa e acordo mútuo?",
+            answer: "No acordo mútuo (CLT Art. 484-A, incluído pela Reforma Trabalhista de 2017), o aviso prévio é de 50% e a multa do FGTS é de 20%. O trabalhador não tem direito ao seguro-desemprego e pode sacar apenas 80% do FGTS.",
+          },
+          {
+            question: "O que é a multa de 40% do FGTS?",
+            answer: "É uma indenização paga pelo empregador ao trabalhador demitido sem justa causa, calculada sobre o saldo total depositado no FGTS durante o contrato. A empresa deposita diretamente na conta do FGTS do trabalhador.",
+          },
+          {
+            question: "Férias proporcionais são sempre pagas na rescisão?",
+            answer: "Sim, exceto em demissão por justa causa, onde o trabalhador perde as férias proporcionais. Férias vencidas (período aquisitivo completo) são pagas em qualquer modalidade de rescisão, inclusive por justa causa.",
+          },
+        ]}
+      />
       <div className="mb-8">
         <div className="inline-flex items-center justify-center p-3 bg-indigo-50 dark:bg-indigo-900/20 rounded-xl text-indigo-600 mb-4">
           <Briefcase className="w-8 h-8" />
@@ -869,6 +890,31 @@ export default function TrabalhistaPage() {
           </div>
         </CardContent>
       </Card>
+
+      <p className="mt-6 text-xs text-muted-foreground text-right">
+        Revisado pela equipe Fazaconta · Abril de 2026
+      </p>
+
+      <section className="mt-8 border-t border-border pt-6">
+        <h2 className="text-base font-semibold text-foreground mb-3">Outras calculadoras trabalhistas</h2>
+        <ul className="flex flex-col gap-2">
+          <li>
+            <Link href="/banco-de-horas" className="text-primary hover:underline text-sm">
+              Calculadora de Banco de Horas
+            </Link>
+          </li>
+          <li>
+            <Link href="/calculadora-horas-extras" className="text-primary hover:underline text-sm">
+              Calculadora de Horas Extras e Adicional Noturno
+            </Link>
+          </li>
+          <li>
+            <Link href="/simulador-demissao" className="text-primary hover:underline text-sm">
+              Simulador de Cenários de Demissão
+            </Link>
+          </li>
+        </ul>
+      </section>
 
     </div>
   );

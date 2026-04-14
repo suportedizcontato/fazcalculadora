@@ -1,33 +1,23 @@
-import { useEffect } from "react";
 import { Link } from "wouter";
 import { Percent, ArrowRight } from "lucide-react";
+import { PageMeta } from "@/components/page-meta";
+
+const FAQ_X_PORCENTO = [
+  { question: "Como calcular porcentagem de um valor?", answer: "Multiplique o valor pela porcentagem e divida por 100. Para saber quanto é 15% de R$ 200: (15 × 200) ÷ 100 = R$ 30." },
+  { question: "Quanto é X% de Y?", answer: "Use a fórmula: resultado = (X × Y) ÷ 100. Exemplos: 10% de 500 = 50; 25% de 200 = 50; 50% de 90 = 45." },
+  { question: "Como calcular porcentagem rapidamente?", answer: "Para 10%, divida por 10. Para 5%, divida por 20. Para 1%, divida por 100. Para outras porcentagens, use a fórmula (porcentagem × valor) ÷ 100." },
+  { question: "Qual é a fórmula da porcentagem?", answer: "A fórmula é: resultado = (porcentagem × valor) ÷ 100. Para descobrir que porcentagem A representa de B, use: % = (A ÷ B) × 100." },
+];
 
 export default function QuantoEXPorcentoDeY() {
-  useEffect(() => {
-    const prevTitle = document.title;
-    document.title =
-      "Quanto é X% de um valor? | Exemplos e Calculadora | Fazaconta";
-
-    let metaDesc = document.querySelector<HTMLMetaElement>(
-      'meta[name="description"]'
-    );
-    if (!metaDesc) {
-      metaDesc = document.createElement("meta");
-      metaDesc.name = "description";
-      document.head.appendChild(metaDesc);
-    }
-    const prevContent = metaDesc.content;
-    metaDesc.content =
-      "Descubra quanto é X% de um valor com exemplos práticos. Aprenda a calcular porcentagem e use nossa calculadora online gratuita.";
-
-    return () => {
-      document.title = prevTitle;
-      metaDesc!.content = prevContent;
-    };
-  }, []);
 
   return (
     <div className="max-w-2xl mx-auto">
+      <PageMeta
+        title="Quanto é X% de um valor? | Exemplos e Calculadora | Fazaconta"
+        description="Descubra quanto é X% de um valor com exemplos práticos. Aprenda a calcular porcentagem e use nossa calculadora online gratuita."
+        faq={FAQ_X_PORCENTO}
+      />
       <div className="mb-8">
         <div className="inline-flex items-center justify-center p-3 bg-emerald-50 dark:bg-emerald-900/20 rounded-xl text-emerald-600 mb-4">
           <Percent className="w-8 h-8" />

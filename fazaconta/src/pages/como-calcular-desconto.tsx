@@ -1,33 +1,22 @@
-import { useEffect } from "react";
 import { Link } from "wouter";
 import { Tag, ArrowRight } from "lucide-react";
+import { PageMeta } from "@/components/page-meta";
+
+const FAQ_DESCONTO = [
+  { question: "Como calcular desconto?", answer: "Multiplique o valor pelo percentual de desconto e divida por 100. Subtraia o resultado do valor original. Exemplo: 20% de desconto em R$ 250 → desconto = R$ 50 → valor final = R$ 200." },
+  { question: "Como saber o valor final com desconto?", answer: "Use a fórmula: valor final = valor × (1 − desconto/100). Para 15% de desconto em R$ 400: 400 × 0,85 = R$ 340." },
+  { question: "Como calcular a porcentagem de desconto entre dois preços?", answer: "Subtraia o novo preço do original, divida pelo original e multiplique por 100. Exemplo: preço de R$ 200 caiu para R$ 160 → (200 − 160) ÷ 200 × 100 = 20% de desconto." },
+  { question: "Como calcular desconto em produtos com preço parcelado?", answer: "Aplique o desconto sobre o preço à vista antes de parcelar. Se o produto custa R$ 600 à vista com 10% de desconto, o valor com desconto é R$ 540 — que então pode ser parcelado." },
+];
 
 export default function ComoCalcularDesconto() {
-  useEffect(() => {
-    const prevTitle = document.title;
-    document.title =
-      "Como Calcular Desconto Percentual | Fórmula e Exemplos | Fazaconta";
-
-    let metaDesc = document.querySelector<HTMLMetaElement>(
-      'meta[name="description"]'
-    );
-    if (!metaDesc) {
-      metaDesc = document.createElement("meta");
-      metaDesc.name = "description";
-      document.head.appendChild(metaDesc);
-    }
-    const prevContent = metaDesc.content;
-    metaDesc.content =
-      "Aprenda como calcular desconto percentual com fórmulas e exemplos práticos. Descubra o valor final com desconto de forma simples.";
-
-    return () => {
-      document.title = prevTitle;
-      metaDesc!.content = prevContent;
-    };
-  }, []);
-
   return (
     <div className="max-w-2xl mx-auto">
+      <PageMeta
+        title="Como Calcular Desconto Percentual | Fórmula e Exemplos | Fazaconta"
+        description="Aprenda como calcular desconto percentual com fórmulas e exemplos práticos. Descubra o valor final com desconto de forma simples."
+        faq={FAQ_DESCONTO}
+      />
       <div className="mb-8">
         <div className="inline-flex items-center justify-center p-3 bg-emerald-50 dark:bg-emerald-900/20 rounded-xl text-emerald-600 mb-4">
           <Tag className="w-8 h-8" />

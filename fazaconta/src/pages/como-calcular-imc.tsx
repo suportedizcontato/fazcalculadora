@@ -1,30 +1,23 @@
-import { useEffect } from "react";
 import { Link } from "wouter";
 import { Activity, ArrowRight } from "lucide-react";
+import { PageMeta } from "@/components/page-meta";
+
+const FAQ_IMC = [
+  { question: "O que é IMC?", answer: "IMC significa Índice de Massa Corporal. É uma medida calculada a partir do peso e da altura que classifica o estado nutricional em categorias como abaixo do peso, peso normal, sobrepeso e obesidade." },
+  { question: "Como calcular IMC?", answer: "Divida seu peso em quilogramas pelo quadrado da sua altura em metros. Exemplo: 70 kg ÷ (1,75 × 1,75) = 22,9." },
+  { question: "Qual é o IMC ideal?", answer: "Segundo a OMS, o IMC ideal para adultos está entre 18,5 e 24,9, classificado como Peso normal." },
+  { question: "IMC é confiável?", answer: "O IMC é uma ferramenta de triagem prática, mas não leva em conta fatores como percentual de gordura ou massa muscular. Sempre consulte um profissional de saúde para avaliação completa." },
+  { question: "IMC serve para qualquer pessoa?", answer: "O IMC foi desenvolvido para adultos em geral. Para crianças e adolescentes, a OMS usa tabelas específicas por idade e sexo. Grávidas, idosos e atletas também podem ter interpretações diferentes." },
+];
 
 export default function ComoCalcularImc() {
-  useEffect(() => {
-    const prevTitle = document.title;
-    document.title = "Como Calcular IMC | Fórmula, Tabela e Exemplo Prático | Fazaconta";
-
-    let metaDesc = document.querySelector<HTMLMetaElement>('meta[name="description"]');
-    if (!metaDesc) {
-      metaDesc = document.createElement("meta");
-      metaDesc.name = "description";
-      document.head.appendChild(metaDesc);
-    }
-    const prevContent = metaDesc.content;
-    metaDesc.content =
-      "Aprenda como calcular IMC com fórmula, exemplo prático e tabela completa. Veja como interpretar o resultado e use nossa calculadora de IMC online.";
-
-    return () => {
-      document.title = prevTitle;
-      metaDesc!.content = prevContent;
-    };
-  }, []);
-
   return (
     <div className="max-w-2xl mx-auto">
+      <PageMeta
+        title="Como Calcular IMC | Fórmula, Tabela e Exemplo Prático | Fazaconta"
+        description="Aprenda como calcular IMC com fórmula, exemplo prático e tabela completa. Veja como interpretar o resultado e use nossa calculadora de IMC online."
+        faq={FAQ_IMC}
+      />
       <div className="mb-8">
         <div className="inline-flex items-center justify-center p-3 bg-blue-50 rounded-xl text-blue-600 mb-4">
           <Activity className="w-8 h-8" />

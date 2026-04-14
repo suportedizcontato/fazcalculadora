@@ -3,6 +3,7 @@ import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import * as z from "zod";
 import { ResultBox } from "@/components/result-box";
+import { PageMeta } from "@/components/page-meta";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Button } from "@/components/ui/button";
@@ -52,10 +53,6 @@ export const WATER_DISCLAIMER =
 export default function Agua() {
   const [result, setResult] = useState<WaterResult | null>(null);
 
-  useEffect(() => {
-    document.title = "Consumo de Água | Fazaconta Online";
-  }, []);
-
   const { register, handleSubmit, setFocus, watch, formState: { errors } } = useForm<FormData>({
     resolver: zodResolver(formSchema),
   });
@@ -80,6 +77,28 @@ export default function Agua() {
 
   return (
     <div className="max-w-2xl mx-auto">
+      <PageMeta
+        title="Calculadora de Consumo de Água Diário | Fazaconta"
+        description="Descubra quantos litros de água você deve beber por dia com base no seu peso corporal. Cálculo gratuito e instantâneo."
+        faq={[
+          {
+            question: "Quantos litros de água devo beber por dia?",
+            answer: "A recomendação geral é de 35 ml por kg de peso corporal. Uma pessoa de 70 kg deve beber cerca de 2,45 litros (aproximadamente 10 copos de 250 ml) por dia.",
+          },
+          {
+            question: "A fórmula de 35 ml por kg serve para todo mundo?",
+            answer: "É uma referência amplamente utilizada, mas pode variar conforme atividade física, temperatura ambiente, condições de saúde e gestação. Consulte um profissional de saúde para orientação individualizada.",
+          },
+          {
+            question: "Outros líquidos contam como ingestão de água?",
+            answer: "Sucos naturais, chás, sopas e até alimentos com alto teor de água (melancia, pepino) contribuem para a hidratação diária. A fórmula de 35 ml/kg considera exclusivamente água pura.",
+          },
+          {
+            question: "Como saber se estou bebendo água suficiente?",
+            answer: "O indicador mais prático é a cor da urina: amarelo-claro indica hidratação adequada; amarelo-escuro indica necessidade de beber mais água. Sede frequente também é sinal de desidratação leve.",
+          },
+        ]}
+      />
       <div className="mb-8">
         <div className="inline-flex items-center justify-center p-3 bg-cyan-50 rounded-xl text-cyan-500 mb-4">
           <Droplets className="w-8 h-8" />
@@ -140,6 +159,9 @@ export default function Agua() {
           </div>
         </CardContent>
       </Card>
+      <p className="mt-6 text-xs text-muted-foreground text-right">
+        Revisado pela equipe Fazaconta · Abril de 2026
+      </p>
     </div>
   );
 }

@@ -1,33 +1,23 @@
-import { useEffect } from "react";
 import { Link } from "wouter";
 import { Percent, ArrowRight } from "lucide-react";
+import { PageMeta } from "@/components/page-meta";
+
+const FAQ_PORCENTAGEM = [
+  { question: "O que é porcentagem?", answer: "Porcentagem representa uma fração de 100. O símbolo % indica \"por cem\". Por exemplo, 40% equivale a 40 de cada 100, ou 0,40 em forma decimal." },
+  { question: "Como calcular porcentagem de um valor?", answer: "Multiplique o valor pela porcentagem e divida por 100. Para saber quanto é 15% de R$ 200: (15 × 200) ÷ 100 = R$ 30." },
+  { question: "Como calcular desconto percentual?", answer: "Subtraia a porcentagem do valor original: valor final = valor − (% × valor ÷ 100). Com 20% de desconto em R$ 150: R$ 150 − R$ 30 = R$ 120." },
+  { question: "Como calcular aumento percentual?", answer: "Some a porcentagem ao valor original: valor final = valor + (% × valor ÷ 100). Com 5% de aumento em R$ 1.000: R$ 1.000 + R$ 50 = R$ 1.050." },
+  { question: "Como saber quantos por cento um número representa?", answer: "Divida o número pelo total e multiplique por 100. Se você economizou R$ 80 de um salário de R$ 400: (80 ÷ 400) × 100 = 20%." },
+];
 
 export default function ComoCalcularPorcentagem() {
-  useEffect(() => {
-    const prevTitle = document.title;
-    document.title =
-      "Como Calcular Porcentagem | Fórmula, Exemplos e Calculadora | Fazaconta";
-
-    let metaDesc = document.querySelector<HTMLMetaElement>(
-      'meta[name="description"]'
-    );
-    if (!metaDesc) {
-      metaDesc = document.createElement("meta");
-      metaDesc.name = "description";
-      document.head.appendChild(metaDesc);
-    }
-    const prevContent = metaDesc.content;
-    metaDesc.content =
-      "Aprenda como calcular porcentagem com fórmulas e exemplos práticos. Descubra como calcular descontos, aumentos e use nossa calculadora online.";
-
-    return () => {
-      document.title = prevTitle;
-      metaDesc!.content = prevContent;
-    };
-  }, []);
-
   return (
     <div className="max-w-2xl mx-auto">
+      <PageMeta
+        title="Como Calcular Porcentagem | Fórmula, Exemplos e Calculadora | Fazaconta"
+        description="Aprenda como calcular porcentagem com fórmulas e exemplos práticos. Descubra como calcular descontos, aumentos e use nossa calculadora online."
+        faq={FAQ_PORCENTAGEM}
+      />
       <div className="mb-8">
         <div className="inline-flex items-center justify-center p-3 bg-blue-50 rounded-xl text-blue-600 mb-4">
           <Percent className="w-8 h-8" />

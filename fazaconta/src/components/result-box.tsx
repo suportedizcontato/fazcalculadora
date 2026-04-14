@@ -1,4 +1,3 @@
-import { motion, AnimatePresence } from "framer-motion";
 import { CheckCircle2, AlertCircle, Info } from "lucide-react";
 
 export type ResultVariant = "default" | "success" | "warning" | "danger" | "info";
@@ -39,41 +38,33 @@ export function ResultBox({
     }
   };
 
+  if (!isVisible) return null;
+
   return (
-    <AnimatePresence>
-      {isVisible && (
-        <motion.div
-          initial={{ opacity: 0, height: 0, scale: 0.95 }}
-          animate={{ opacity: 1, height: "auto", scale: 1 }}
-          exit={{ opacity: 0, height: 0, scale: 0.95 }}
-          transition={{ duration: 0.3, ease: "easeOut" }}
-          className="overflow-hidden"
-        >
-          <div data-variant={variant} className={`mt-8 p-6 rounded-2xl border-2 shadow-sm relative overflow-hidden ${getColors()}`}>
-            {variant !== "default" && (
-              <div className="absolute top-0 left-0 w-1 h-full" 
-                   style={{ backgroundColor: `hsl(var(--${variant === 'danger' ? 'destructive' : variant}))` }} />
-            )}
-            
-            <div className="flex items-start gap-4">
-              {getIcon()}
-              <div className="flex-1">
-                <h3 className="text-sm font-medium uppercase tracking-wider opacity-80 mb-1">
-                  {title}
-                </h3>
-                <div className="text-3xl sm:text-4xl font-display font-bold tracking-tight mb-2">
-                  {value}
-                </div>
-                {description && (
-                  <p className="text-sm opacity-90 leading-relaxed">
-                    {description}
-                  </p>
-                )}
-              </div>
+    <div className="animate-result-enter overflow-hidden">
+      <div data-variant={variant} className={`mt-8 p-6 rounded-2xl border-2 shadow-sm relative overflow-hidden ${getColors()}`}>
+        {variant !== "default" && (
+          <div className="absolute top-0 left-0 w-1 h-full"
+               style={{ backgroundColor: `hsl(var(--${variant === 'danger' ? 'destructive' : variant}))` }} />
+        )}
+
+        <div className="flex items-start gap-4">
+          {getIcon()}
+          <div className="flex-1">
+            <h3 className="text-sm font-medium uppercase tracking-wider opacity-80 mb-1">
+              {title}
+            </h3>
+            <div className="text-3xl sm:text-4xl font-display font-bold tracking-tight mb-2">
+              {value}
             </div>
+            {description && (
+              <p className="text-sm opacity-90 leading-relaxed">
+                {description}
+              </p>
+            )}
           </div>
-        </motion.div>
-      )}
-    </AnimatePresence>
+        </div>
+      </div>
+    </div>
   );
 }

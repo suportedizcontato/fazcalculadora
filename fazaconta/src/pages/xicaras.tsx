@@ -3,6 +3,7 @@ import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import * as z from "zod";
 import { ResultBox } from "@/components/result-box";
+import { PageMeta } from "@/components/page-meta";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Button } from "@/components/ui/button";
@@ -53,10 +54,6 @@ type FormData = z.infer<typeof formSchema>;
 export default function Xicaras() {
   const [result, setResult] = useState<CupResult | null>(null);
 
-  useEffect(() => {
-    document.title = "Conversor de Xícaras | Fazaconta Online";
-  }, []);
-
   const { register, handleSubmit, setFocus, watch, formState: { errors } } = useForm<FormData>({
     resolver: zodResolver(formSchema),
   });
@@ -81,6 +78,28 @@ export default function Xicaras() {
 
   return (
     <div className="max-w-2xl mx-auto">
+      <PageMeta
+        title="Conversor de Xícaras para ML e Copos | Fazaconta"
+        description="Converta xícaras de receita para mililitros e copos de forma rápida e gratuita. 1 xícara = 240 ml."
+        faq={[
+          {
+            question: "Quantos ml tem uma xícara de receita?",
+            answer: "A xícara de chá padrão brasileira tem 240 ml. Este conversor usa esse valor, que é o mais comum em receitas nacionais.",
+          },
+          {
+            question: "Qual a diferença entre xícara de chá e xícara de café?",
+            answer: "A xícara de chá tem 240 ml. A xícara de café tem aproximadamente 50 ml. Receitas brasileiras geralmente se referem à xícara de chá quando pedem 'xícara' sem especificar.",
+          },
+          {
+            question: "Xícara brasileira é igual à xícara americana (cup)?",
+            answer: "Não. A xícara americana (1 cup) tem 240 ml, coincidindo com a xícara de chá brasileira. Porém, algumas receitas importadas usam a xícara americana de 236 ml — a diferença é mínima para uso culinário.",
+          },
+          {
+            question: "Quantas xícaras cabem em um copo americano de 200 ml?",
+            answer: "Um copo americano de 200 ml equivale a aproximadamente 0,83 xícara de chá (240 ml). Ou seja, para encher 1 xícara você precisa de 1,2 copos de 200 ml.",
+          },
+        ]}
+      />
       <div className="mb-8">
         <div className="inline-flex items-center justify-center p-3 bg-amber-50 rounded-xl text-amber-600 mb-4">
           <Coffee className="w-8 h-8" />
@@ -140,6 +159,9 @@ export default function Xicaras() {
           </div>
         </CardContent>
       </Card>
+      <p className="mt-6 text-xs text-muted-foreground text-right">
+        Revisado pela equipe Fazaconta · Abril de 2026
+      </p>
     </div>
   );
 }

@@ -81,7 +81,7 @@
   --accent: 199 89% 48%; /* Teal accent */
   --accent-foreground: 210 40% 98%;
   
-  --destructive: 0 84% 60%;
+  --destructive: 0 72% 40%;
   --destructive-foreground: 210 40% 98%;
   
   --success: 142 76% 36%;
@@ -127,12 +127,36 @@
   --accent: 199 89% 48%;
   --accent-foreground: 210 40% 98%;
   
-  --destructive: 0 63% 31%;
+  --destructive: 0 72% 65%;
   --destructive-foreground: 210 40% 98%;
-  
+
+  --success: 142 60% 50%;
+  --success-foreground: 142 60% 10%;
+
+  --warning: 38 92% 60%;
+  --warning-foreground: 48 96% 10%;
+
   --border: 217 33% 17%;
   --input: 217 33% 17%;
   --ring: 224 71.4% 4.1%;
+}
+
+@keyframes page-enter {
+  from { opacity: 0; transform: translateY(15px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes result-enter {
+  from { opacity: 0; transform: scale(0.95); }
+  to   { opacity: 1; transform: scale(1); }
+}
+
+.animate-page-enter {
+  animation: page-enter 0.4s ease-out both;
+}
+
+.animate-result-enter {
+  animation: result-enter 0.3s ease-out both;
 }
 
 .ad-placeholder {
