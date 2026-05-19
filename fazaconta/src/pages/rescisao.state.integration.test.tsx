@@ -19,6 +19,7 @@ vi.mock("wouter", () => ({
   Link: ({ children, href }: { children: React.ReactNode; href: string }) => (
     <a href={href}>{children}</a>
   ),
+  useLocation: () => ["/" as string, () => {}] as [string, (path: string) => void],
 }));
 
 // Radix UI uses ResizeObserver which is not in jsdom

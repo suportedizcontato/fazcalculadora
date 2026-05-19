@@ -23,6 +23,7 @@ vi.mock("wouter", () => ({
   Link: ({ children, href }: { children: React.ReactNode; href: string }) => (
     <a href={href}>{children}</a>
   ),
+  useLocation: () => ["/" as string, () => {}] as [string, (path: string) => void],
 }));
 
 global.ResizeObserver = class ResizeObserver {
