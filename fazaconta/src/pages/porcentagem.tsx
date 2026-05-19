@@ -5,6 +5,8 @@ import * as z from "zod";
 import { Link } from "wouter";
 import { ResultBox, type ResultVariant } from "@/components/result-box";
 import { PageMeta } from "@/components/page-meta";
+import { AdUnit } from "@/components/ad-unit";
+import { RelatedCalculators } from "@/components/related-calculators";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Button } from "@/components/ui/button";
@@ -312,8 +314,6 @@ export default function Porcentagem() {
         </p>
       </div>
 
-      <div className="ad-placeholder" />
-
       <Card className="border-border shadow-md">
         <CardContent className="p-6 sm:p-8">
           {/* Mode selector */}
@@ -384,7 +384,7 @@ export default function Porcentagem() {
         </CardContent>
       </Card>
 
-      <div className="ad-placeholder mt-6" />
+      <AdUnit slot="inContent" className="mt-6" />
 
       <div className="mt-10 space-y-8 text-base text-foreground">
         <section>
@@ -465,7 +465,7 @@ export default function Porcentagem() {
           </p>
         </section>
 
-        <div className="ad-placeholder" />
+        <AdUnit slot="bottom" />
 
         <section>
           <h2 className="text-xl font-semibold mb-3">Perguntas frequentes</h2>
@@ -491,9 +491,11 @@ export default function Porcentagem() {
         </section>
       </div>
 
+      <RelatedCalculators />
+
       <div className="mt-6 flex items-center justify-between flex-wrap gap-2">
         <Link href="/" className="inline-flex items-center text-sm text-muted-foreground hover:text-foreground transition-colors">
-          <ArrowLeft className="w-4 h-4 mr-1" />
+          <ArrowLeft className="w-4 h-4 mr-1" aria-hidden="true" />
           Voltar para a página inicial
         </Link>
         <p className="text-xs text-muted-foreground">

@@ -21,6 +21,7 @@ const ComoCalcularAumentoPercentual = lazy(() => import("@/pages/como-calcular-a
 const QuantoEXPorcentoDeY = lazy(() => import("@/pages/quanto-e-x-porcento-de-y"));
 const PoliticaPrivacidade = lazy(() => import("@/pages/politica-privacidade"));
 const Sobre = lazy(() => import("@/pages/sobre"));
+const Contato = lazy(() => import("@/pages/contato"));
 const BancoDeHoras = lazy(() => import("@/pages/banco-de-horas"));
 const HorasExtras = lazy(() => import("@/pages/horas-extras"));
 const SimuladorDemissao = lazy(() => import("@/pages/simulador-demissao"));
@@ -49,6 +50,7 @@ function Router() {
         <Route path="/simulador-demissao" component={SimuladorDemissao} />
         <Route path="/politica-de-privacidade" component={PoliticaPrivacidade} />
         <Route path="/sobre" component={Sobre} />
+        <Route path="/contato" component={Contato} />
         <Route component={NotFound} />
       </Switch>
       </Suspense>

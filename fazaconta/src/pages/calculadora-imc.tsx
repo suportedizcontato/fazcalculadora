@@ -5,6 +5,8 @@ import * as z from "zod";
 import { Link } from "wouter";
 import { ResultBox } from "@/components/result-box";
 import { PageMeta } from "@/components/page-meta";
+import { AdUnit } from "@/components/ad-unit";
+import { RelatedCalculators } from "@/components/related-calculators";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Button } from "@/components/ui/button";
@@ -245,30 +247,16 @@ export default function CalculadoraImc() {
         </section>
       </div>
 
-      <section className="mt-10 text-base text-foreground">
-        <h2 className="text-xl font-semibold mb-3">Outras calculadoras de saúde</h2>
-        <ul className="space-y-2 text-muted-foreground list-disc list-inside">
-          <li>
-            <Link href="/consumo-agua" className="text-primary hover:underline">
-              Calculadora de consumo de água diário
-            </Link>{" "}
-            — descubra quantos litros você deve beber por dia.
-          </li>
-          <li>
-            <Link href="/calculadora-porcentagem" className="text-primary hover:underline">
-              Calculadora de porcentagem
-            </Link>{" "}
-            — calcule descontos, aumentos e variações percentuais.
-          </li>
-        </ul>
-      </section>
+      <AdUnit slot="bottom" className="mt-10" />
+
+      <RelatedCalculators />
 
       <div className="mt-6 flex items-center justify-between flex-wrap gap-2">
         <Link
           href="/"
           className="inline-flex items-center text-sm text-muted-foreground hover:text-foreground transition-colors"
         >
-          <ArrowLeft className="w-4 h-4 mr-1" />
+          <ArrowLeft className="w-4 h-4 mr-1" aria-hidden="true" />
           Voltar para a página inicial
         </Link>
         <p className="text-xs text-muted-foreground">

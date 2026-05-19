@@ -11,62 +11,63 @@ import {
   ArrowRight
 } from "lucide-react";
 import { PageMeta } from "@/components/page-meta";
+import { AdUnit } from "@/components/ad-unit";
 
 const CALCULATORS = [
   {
     href: "/calculadora-imc",
     title: "Calculadora de IMC",
     description: "Descubra se o seu peso está ideal para sua altura.",
-    icon: <Activity className="w-6 h-6 text-primary" />,
+    icon: <Activity className="w-6 h-6 text-primary" aria-hidden="true" />,
     color: "bg-blue-50 dark:bg-blue-900/20"
   },
   {
     href: "/consumo-agua",
     title: "Consumo de Água",
     description: "Calcule a quantidade ideal de água para beber por dia.",
-    icon: <Droplets className="w-6 h-6 text-cyan-500" />,
+    icon: <Droplets className="w-6 h-6 text-cyan-500" aria-hidden="true" />,
     color: "bg-cyan-50 dark:bg-cyan-900/20"
   },
   {
     href: "/conversor-xicaras",
     title: "Conversor de Xícaras",
     description: "Converta xícaras de receita para mililitros e copos.",
-    icon: <Coffee className="w-6 h-6 text-amber-600" />,
+    icon: <Coffee className="w-6 h-6 text-amber-600" aria-hidden="true" />,
     color: "bg-amber-50 dark:bg-amber-900/20"
   },
   {
     href: "/calculadora-trabalhista-clt",
     title: "Calculadora Trabalhista CLT",
     description: "Estime rescisão, férias proporcionais e 13º salário de forma rápida e sem cadastro.",
-    icon: <Briefcase className="w-6 h-6 text-indigo-500" />,
+    icon: <Briefcase className="w-6 h-6 text-indigo-500" aria-hidden="true" />,
     color: "bg-indigo-50 dark:bg-indigo-900/20"
   },
   {
     href: "/banco-de-horas",
     title: "Banco de Horas",
     description: "Calcule o saldo acumulado do banco de horas, o valor monetário e os alertas de prazo legal.",
-    icon: <Clock className="w-6 h-6 text-violet-500" />,
+    icon: <Clock className="w-6 h-6 text-violet-500" aria-hidden="true" />,
     color: "bg-violet-50 dark:bg-violet-900/20"
   },
   {
     href: "/calculadora-horas-extras",
     title: "Horas Extras e Adicional Noturno",
     description: "Calcule o valor das horas extras (50% ou 100%) e do adicional noturno pela CLT.",
-    icon: <TrendingUp className="w-6 h-6 text-orange-500" />,
+    icon: <TrendingUp className="w-6 h-6 text-orange-500" aria-hidden="true" />,
     color: "bg-orange-50 dark:bg-orange-900/20"
   },
   {
     href: "/simulador-demissao",
     title: "Simulador de Demissão",
     description: "Compare rescisão sem justa causa, pedido de demissão e acordo mútuo lado a lado.",
-    icon: <UserMinus className="w-6 h-6 text-rose-500" />,
+    icon: <UserMinus className="w-6 h-6 text-rose-500" aria-hidden="true" />,
     color: "bg-rose-50 dark:bg-rose-900/20"
   },
   {
     href: "/calculadora-porcentagem",
     title: "Calculadora de Porcentagem",
     description: "Calcule porcentagens, aumentos, descontos e variações de forma rápida.",
-    icon: <Percent className="w-6 h-6 text-emerald-500" />,
+    icon: <Percent className="w-6 h-6 text-emerald-500" aria-hidden="true" />,
     color: "bg-emerald-50 dark:bg-emerald-900/20"
   }
 ];
@@ -134,14 +135,14 @@ export default function Home() {
 
               <div className="flex items-center text-sm font-semibold text-primary mt-auto">
                 Calcular agora
-                <ArrowRight className="w-4 h-4 ml-1 transform group-hover:translate-x-1 transition-transform" />
+                <ArrowRight className="w-4 h-4 ml-1 transform group-hover:translate-x-1 transition-transform" aria-hidden="true" />
               </div>
             </div>
           </Link>
         ))}
       </section>
 
-      <div className="ad-placeholder" />
+      <AdUnit slot="bottom" />
 
       <section className="border-t border-border pt-8">
         <h2 className="text-xl font-display font-bold text-foreground mb-3">
