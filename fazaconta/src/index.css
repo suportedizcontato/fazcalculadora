@@ -159,12 +159,6 @@
   animation: result-enter 0.3s ease-out both;
 }
 
-.ad-placeholder {
-  width: 100%;
-  min-height: 90px;
-  background-color: transparent;
-}
-
 @layer base {
   * {
     @apply border-border;

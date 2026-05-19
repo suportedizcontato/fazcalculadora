@@ -4,6 +4,8 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import * as z from "zod";
 import { ResultBox } from "@/components/result-box";
 import { PageMeta } from "@/components/page-meta";
+import { AdUnit } from "@/components/ad-unit";
+import { RelatedCalculators } from "@/components/related-calculators";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Button } from "@/components/ui/button";
@@ -159,6 +161,10 @@ export default function Xicaras() {
           </div>
         </CardContent>
       </Card>
+      <AdUnit slot="bottom" className="mt-8" />
+
+      <RelatedCalculators />
+
       <p className="mt-6 text-xs text-muted-foreground text-right">
         Revisado pela equipe Fazaconta · Abril de 2026
       </p>

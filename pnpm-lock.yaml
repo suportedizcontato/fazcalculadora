@@ -66,6 +66,8 @@ catalogs:
 
 importers:
 
+  .: {}
+
   api-client-react: {}
 
   fazaconta:

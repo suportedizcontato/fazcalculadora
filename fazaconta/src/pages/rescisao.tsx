@@ -203,6 +203,8 @@ export function buildNarrativeDecimo(input: DecimoInput, result: DecimoResult): 
 
 import React, { useState, useEffect } from "react";
 import { PageMeta } from "@/components/page-meta";
+import { AdUnit } from "@/components/ad-unit";
+import { RelatedCalculators } from "@/components/related-calculators";
 import { useForm, Controller, type FieldErrors } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { ResultBox } from "@/components/result-box";
@@ -895,27 +897,9 @@ export default function TrabalhistaPage() {
         Revisado pela equipe Fazaconta · Abril de 2026
       </p>
 
-      <section className="mt-8 border-t border-border pt-6">
-        <h2 className="text-base font-semibold text-foreground mb-3">Outras calculadoras trabalhistas</h2>
-        <ul className="flex flex-col gap-2">
-          <li>
-            <Link href="/banco-de-horas" className="text-primary hover:underline text-sm">
-              Calculadora de Banco de Horas
-            </Link>
-          </li>
-          <li>
-            <Link href="/calculadora-horas-extras" className="text-primary hover:underline text-sm">
-              Calculadora de Horas Extras e Adicional Noturno
-            </Link>
-          </li>
-          <li>
-            <Link href="/simulador-demissao" className="text-primary hover:underline text-sm">
-              Simulador de Cenários de Demissão
-            </Link>
-          </li>
-        </ul>
-      </section>
+      <AdUnit slot="bottom" className="mt-8" />
 
+      <RelatedCalculators />
     </div>
   );
 }

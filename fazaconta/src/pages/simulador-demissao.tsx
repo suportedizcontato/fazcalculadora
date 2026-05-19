@@ -289,6 +289,8 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { Briefcase } from "lucide-react";
 import { Link } from "wouter";
 import { PageMeta } from "@/components/page-meta";
+import { AdUnit } from "@/components/ad-unit";
+import { RelatedCalculators } from "@/components/related-calculators";
 import { ResultBox } from "@/components/result-box";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -856,28 +858,11 @@ export default function SimuladorDemissaoPage() {
           </div>
         </section>
 
-        <section className="mt-8 border-t border-border pt-6">
-          <h2 className="text-base font-semibold text-foreground mb-3">Outras calculadoras trabalhistas</h2>
-          <ul className="flex flex-col gap-2">
-            <li>
-              <Link href="/banco-de-horas" className="text-primary hover:underline text-sm">
-                Calculadora de Banco de Horas
-              </Link>
-            </li>
-            <li>
-              <Link href="/calculadora-horas-extras" className="text-primary hover:underline text-sm">
-                Calculadora de Horas Extras e Adicional Noturno
-              </Link>
-            </li>
-            <li>
-              <Link href="/calculadora-trabalhista-clt" className="text-primary hover:underline text-sm">
-                Calculadora Trabalhista CLT (rescisão, férias e 13º)
-              </Link>
-            </li>
-          </ul>
-        </section>
+        <AdUnit slot="bottom" className="mt-8" />
 
       </div>
+
+      <RelatedCalculators />
     </div>
   );
 }
