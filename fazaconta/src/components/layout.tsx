@@ -228,7 +228,7 @@ export function Layout({ children }: LayoutProps) {
                 Contato
               </Link>
               <Link href="/politica-de-privacidade" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
-                Privacidade
+                Política de Privacidade
               </Link>
             </nav>
           </div>
