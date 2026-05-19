@@ -80,7 +80,7 @@ export function Layout({ children }: LayoutProps) {
   return (
     <div className="min-h-screen flex flex-col relative overflow-hidden bg-background">
       {/* Background decorations */}
-      <div className="absolute top-0 left-0 right-0 h-[400px] w-full z-0 pointer-events-none opacity-40">
+      <div className="absolute top-0 left-0 right-0 h-[520px] w-full z-0 pointer-events-none opacity-40">
         <div className="absolute inset-0 bg-gradient-to-b from-primary/10 to-transparent" />
         <img
           src={`${import.meta.env.BASE_URL}images/hero-abstract.png`}

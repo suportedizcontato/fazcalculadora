@@ -79,7 +79,7 @@ export default function Home() {
         title="Fazaconta Online - Calculadoras simples para o dia a dia"
         description="Calculadoras online gratuitas para brasileiros: IMC, porcentagem, consumo de água, xícaras, rescisão CLT e muito mais. Sem cadastro, resultado imediato."
       />
-      <section className="text-center max-w-2xl mx-auto mt-4 sm:mt-8">
+      <section className="text-center w-full max-w-2xl mx-auto mt-4 sm:mt-8">
         <h1 className="text-4xl sm:text-5xl md:text-6xl font-display font-extrabold text-foreground mb-4 sm:mb-6 tracking-tight">
           Calculadoras Online Gratuitas
         </h1>

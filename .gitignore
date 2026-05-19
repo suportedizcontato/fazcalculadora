@@ -2,6 +2,7 @@
 .sdd/
 CLAUDE.md
 node_modules
+dist/
 CLAUDE-AI-CONTEXT.md
 PLANO-MONETIZACAO.md
 _bmad/
