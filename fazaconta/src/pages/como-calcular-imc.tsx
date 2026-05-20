@@ -19,7 +19,7 @@ export default function ComoCalcularImc() {
         faq={FAQ_IMC}
       />
       <div className="mb-8">
-        <div className="inline-flex items-center justify-center p-3 bg-blue-50 rounded-xl text-blue-600 mb-4">
+        <div className="inline-flex items-center justify-center p-3 bg-blue-500/10 rounded-xl text-blue-500 mb-4">
           <Activity className="w-8 h-8" />
         </div>
         <h1 className="text-3xl sm:text-4xl font-display font-bold mb-3">
@@ -99,27 +99,27 @@ export default function ComoCalcularImc() {
               <tbody className="divide-y divide-border">
                 <tr>
                   <td className="p-3 text-muted-foreground">Abaixo de 18,5</td>
-                  <td className="p-3 font-medium text-blue-600">Abaixo do peso</td>
+                  <td className="p-3 font-medium text-blue-600 dark:text-blue-400">Abaixo do peso</td>
                 </tr>
                 <tr>
                   <td className="p-3 text-muted-foreground">18,5 a 24,9</td>
-                  <td className="p-3 font-medium text-green-600">Peso normal</td>
+                  <td className="p-3 font-medium text-green-600 dark:text-green-400">Peso normal</td>
                 </tr>
                 <tr>
                   <td className="p-3 text-muted-foreground">25,0 a 29,9</td>
-                  <td className="p-3 font-medium text-yellow-600">Sobrepeso</td>
+                  <td className="p-3 font-medium text-yellow-600 dark:text-yellow-400">Sobrepeso</td>
                 </tr>
                 <tr>
                   <td className="p-3 text-muted-foreground">30,0 a 34,9</td>
-                  <td className="p-3 font-medium text-orange-500">Obesidade grau 1</td>
+                  <td className="p-3 font-medium text-orange-500 dark:text-orange-400">Obesidade grau 1</td>
                 </tr>
                 <tr>
                   <td className="p-3 text-muted-foreground">35,0 a 39,9</td>
-                  <td className="p-3 font-medium text-orange-600">Obesidade grau 2</td>
+                  <td className="p-3 font-medium text-orange-600 dark:text-orange-400">Obesidade grau 2</td>
                 </tr>
                 <tr>
                   <td className="p-3 text-muted-foreground">40,0 ou mais</td>
-                  <td className="p-3 font-medium text-red-600">Obesidade grau 3</td>
+                  <td className="p-3 font-medium text-red-600 dark:text-red-400">Obesidade grau 3</td>
                 </tr>
               </tbody>
             </table>
@@ -192,7 +192,7 @@ export default function ComoCalcularImc() {
           </div>
         </section>
 
-        <section className="p-6 bg-blue-50 rounded-2xl border border-blue-100">
+        <section className="p-6 bg-primary/5 rounded-2xl border border-primary/20">
           <h2 className="text-2xl font-semibold mb-2">Calcule seu IMC agora</h2>
           <p className="text-muted-foreground mb-4">
             Quer descobrir seu IMC de forma rápida? Use nossa calculadora online gratuita — basta

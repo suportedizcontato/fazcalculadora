@@ -79,15 +79,21 @@ export function Layout({ children }: LayoutProps) {
 
   return (
     <div className="min-h-screen flex flex-col relative overflow-hidden bg-background">
-      {/* Background decorations */}
-      <div className="absolute top-0 left-0 right-0 h-[520px] w-full z-0 pointer-events-none opacity-40">
-        <div className="absolute inset-0 bg-gradient-to-b from-primary/10 to-transparent" />
-        <img
-          src={`${import.meta.env.BASE_URL}images/hero-abstract.png`}
-          alt=""
-          className="w-full h-full object-cover mix-blend-overlay"
-        />
-      </div>
+      {/* Background decorations — full image only on home */}
+      {isHome ? (
+        <div className="absolute top-0 left-0 right-0 h-[520px] w-full z-0 pointer-events-none opacity-40">
+          <div className="absolute inset-0 bg-gradient-to-b from-primary/10 to-transparent" />
+          <img
+            src={`${import.meta.env.BASE_URL}images/hero-abstract.png`}
+            alt=""
+            className="w-full h-full object-cover mix-blend-overlay"
+          />
+        </div>
+      ) : (
+        <div className="absolute top-0 left-0 right-0 h-48 w-full z-0 pointer-events-none">
+          <div className="absolute inset-0 bg-gradient-to-b from-primary/5 to-transparent" />
+        </div>
+      )}
 
       <header className="sticky top-0 z-50 w-full border-b bg-background/80 backdrop-blur-xl">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between gap-4">

@@ -125,7 +125,7 @@ function BmiScaleIndicator({ imc }: BmiScaleIndicatorProps) {
           />
         ))}
         <div
-          className="absolute top-1/2 -translate-y-1/2 w-3 h-5 bg-white border-2 border-gray-700 rounded-sm shadow"
+          className="absolute top-1/2 -translate-y-1/2 w-3 h-5 bg-background border-2 border-foreground/60 rounded-sm shadow"
           style={{ left: `calc(${markerPct}% - 6px)` }}
         />
       </div>
@@ -184,7 +184,7 @@ export default function Imc() {
   return (
     <div className="max-w-2xl mx-auto">
       <div className="mb-8">
-        <div className="inline-flex items-center justify-center p-3 bg-blue-50 rounded-xl text-blue-600 mb-4">
+        <div className="inline-flex items-center justify-center p-3 bg-blue-500/10 rounded-xl text-blue-500 mb-4">
           <Activity className="w-8 h-8" />
         </div>
         <h1 className="text-3xl sm:text-4xl font-display font-bold mb-3">Calculadora de IMC</h1>

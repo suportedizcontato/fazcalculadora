@@ -91,7 +91,7 @@ export default function CalculadoraImc() {
         faq={IMC_FAQ}
       />
       <div className="mb-8">
-        <div className="inline-flex items-center justify-center p-3 bg-blue-50 rounded-xl text-blue-600 mb-4">
+        <div className="inline-flex items-center justify-center p-3 bg-blue-500/10 rounded-xl text-blue-500 mb-4">
           <Activity className="w-8 h-8" />
         </div>
         <h1 className="text-3xl sm:text-4xl font-display font-bold mb-3">

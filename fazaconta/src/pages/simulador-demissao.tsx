@@ -559,7 +559,7 @@ export default function SimuladorDemissaoPage() {
       <div className="max-w-2xl mx-auto">
         {/* Header */}
         <div className="mb-8">
-          <div className="inline-flex items-center justify-center p-3 bg-blue-50 dark:bg-blue-900/20 rounded-xl text-blue-600 mb-4">
+          <div className="inline-flex items-center justify-center p-3 bg-blue-500/10 rounded-xl text-blue-500 mb-4">
             <Briefcase className="w-8 h-8" />
           </div>
           <h1 className="text-3xl sm:text-4xl font-display font-bold mb-3">

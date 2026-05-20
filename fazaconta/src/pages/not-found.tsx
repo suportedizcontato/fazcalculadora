@@ -4,15 +4,15 @@ import { AlertCircle, Home, Percent, Activity, Droplets, Coffee, Briefcase, Cloc
 
 export default function NotFound() {
   return (
-    <div className="min-h-screen w-full flex items-center justify-center bg-gray-50 p-4">
+    <div className="w-full flex items-center justify-center p-4">
       <Card className="w-full max-w-lg">
         <CardContent className="pt-6 pb-8">
           <div className="flex items-center gap-3 mb-4">
-            <AlertCircle className="h-8 w-8 text-red-500 shrink-0" />
-            <h1 className="text-2xl font-bold text-gray-900">Página não encontrada</h1>
+            <AlertCircle className="h-8 w-8 text-destructive shrink-0" />
+            <h1 className="text-2xl font-bold text-foreground">Página não encontrada</h1>
           </div>
 
-          <p className="text-gray-600 mb-6">
+          <p className="text-muted-foreground mb-6">
             A página que você procura não existe. Veja abaixo as calculadoras disponíveis:
           </p>
 

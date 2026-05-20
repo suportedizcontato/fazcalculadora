@@ -34,7 +34,7 @@ export default function Sobre() {
         <h2 className="text-xl font-semibold mb-4">Nossos princípios</h2>
         <ul className="space-y-4">
           <li className="flex items-start gap-3">
-            <div className="shrink-0 mt-1 w-8 h-8 flex items-center justify-center rounded-lg bg-green-50 text-green-600">
+            <div className="shrink-0 mt-1 w-8 h-8 flex items-center justify-center rounded-lg bg-green-500/10 text-green-500">
               <Zap className="w-4 h-4" />
             </div>
             <div>
@@ -45,7 +45,7 @@ export default function Sobre() {
             </div>
           </li>
           <li className="flex items-start gap-3">
-            <div className="shrink-0 mt-1 w-8 h-8 flex items-center justify-center rounded-lg bg-blue-50 text-blue-600">
+            <div className="shrink-0 mt-1 w-8 h-8 flex items-center justify-center rounded-lg bg-blue-500/10 text-blue-500">
               <Shield className="w-4 h-4" />
             </div>
             <div>
@@ -56,7 +56,7 @@ export default function Sobre() {
             </div>
           </li>
           <li className="flex items-start gap-3">
-            <div className="shrink-0 mt-1 w-8 h-8 flex items-center justify-center rounded-lg bg-red-50 text-red-600">
+            <div className="shrink-0 mt-1 w-8 h-8 flex items-center justify-center rounded-lg bg-red-500/10 text-red-500">
               <Heart className="w-4 h-4" />
             </div>
             <div>

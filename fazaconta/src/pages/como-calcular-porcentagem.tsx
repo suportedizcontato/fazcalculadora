@@ -19,7 +19,7 @@ export default function ComoCalcularPorcentagem() {
         faq={FAQ_PORCENTAGEM}
       />
       <div className="mb-8">
-        <div className="inline-flex items-center justify-center p-3 bg-blue-50 rounded-xl text-blue-600 mb-4">
+        <div className="inline-flex items-center justify-center p-3 bg-blue-500/10 rounded-xl text-blue-500 mb-4">
           <Percent className="w-8 h-8" />
         </div>
         <h1 className="text-3xl sm:text-4xl font-display font-bold mb-3">
@@ -268,7 +268,7 @@ export default function ComoCalcularPorcentagem() {
           </div>
         </section>
 
-        <section className="p-6 bg-blue-50 rounded-2xl border border-blue-100">
+        <section className="p-6 bg-primary/5 rounded-2xl border border-primary/20">
           <h2 className="text-2xl font-semibold mb-2">
             Use a calculadora de porcentagem
           </h2>
