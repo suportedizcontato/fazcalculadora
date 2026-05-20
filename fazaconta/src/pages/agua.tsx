@@ -80,8 +80,8 @@ export default function Agua() {
   return (
     <div className="max-w-2xl mx-auto">
       <PageMeta
-        title="Calculadora de Consumo de Água Diário | Fazaconta"
-        description="Descubra quantos litros de água você deve beber por dia com base no seu peso corporal. Cálculo gratuito e instantâneo."
+        title="Calculadora de Água Diária — Quantos Litros Você Precisa? | Fazaconta"
+        description="Descubra quantos litros de água você deve beber por dia pelo seu peso. Resultado em segundos, sem cadastro. Baseado na fórmula 35 ml/kg."
         faq={[
           {
             question: "Quantos litros de água devo beber por dia?",
@@ -100,6 +100,8 @@ export default function Agua() {
             answer: "O indicador mais prático é a cor da urina: amarelo-claro indica hidratação adequada; amarelo-escuro indica necessidade de beber mais água. Sede frequente também é sinal de desidratação leve.",
           },
         ]}
+        softwareApp
+        dateModified="2026-04-01"
       />
       <div className="mb-8">
         <div className="inline-flex items-center justify-center p-3 bg-cyan-50 rounded-xl text-cyan-500 mb-4">
@@ -110,6 +112,8 @@ export default function Agua() {
           Calcule a quantidade ideal de água que você deve ingerir por dia com base no seu peso corporal (35ml por kg).
         </p>
       </div>
+
+      <AdUnit slot="horizontal" className="mb-6" />
 
       <Card className="border-border shadow-md">
         <CardContent className="p-6 sm:p-8">

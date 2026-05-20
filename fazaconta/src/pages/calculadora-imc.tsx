@@ -86,9 +86,11 @@ export default function CalculadoraImc() {
   return (
     <div className="max-w-2xl mx-auto">
       <PageMeta
-        title="Calculadora de IMC Online Grátis | Fazaconta"
-        description="Calcule seu IMC de forma rápida e fácil. Descubra se você está no peso ideal com nossa calculadora online gratuita."
+        title="Calculadora de IMC Online | Descubra Seu Peso Ideal | Fazaconta"
+        description="Calcule seu IMC em segundos e descubra se está no peso ideal. Fórmula da OMS, tabela completa e resultado imediato. Gratuito, sem cadastro."
         faq={IMC_FAQ}
+        softwareApp
+        dateModified="2026-04-01"
       />
       <div className="mb-8">
         <div className="inline-flex items-center justify-center p-3 bg-blue-500/10 rounded-xl text-blue-500 mb-4">
@@ -103,6 +105,8 @@ export default function CalculadoraImc() {
           classificação.
         </p>
       </div>
+
+      <AdUnit slot="horizontal" className="mb-6" />
 
       <Card className="border-border shadow-md">
         <CardContent className="p-6 sm:p-8">

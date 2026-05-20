@@ -1,6 +1,26 @@
 import { Link } from "wouter";
 import { Percent, ArrowRight } from "lucide-react";
 import { PageMeta } from "@/components/page-meta";
+import type { HowToStep } from "@/components/page-meta";
+
+const HOWTO_PORCENTAGEM = {
+  name: "Como Calcular Porcentagem",
+  description: "Aprenda a calcular porcentagem usando a fórmula básica passo a passo",
+  steps: [
+    {
+      name: "Identifique os valores",
+      text: "Determine a parte (valor que você quer comparar) e o total (valor de referência).",
+    },
+    {
+      name: "Aplique a fórmula",
+      text: "Use a fórmula: porcentagem = (parte ÷ total) × 100.",
+    },
+    {
+      name: "Calcule o resultado",
+      text: "Divida a parte pelo total e multiplique por 100. Exemplo: (45 ÷ 180) × 100 = 25%.",
+    },
+  ] as HowToStep[],
+};
 
 const FAQ_PORCENTAGEM = [
   { question: "O que é porcentagem?", answer: "Porcentagem representa uma fração de 100. O símbolo % indica \"por cem\". Por exemplo, 40% equivale a 40 de cada 100, ou 0,40 em forma decimal." },
@@ -17,6 +37,8 @@ export default function ComoCalcularPorcentagem() {
         title="Como Calcular Porcentagem | Fórmula, Exemplos e Calculadora | Fazaconta"
         description="Aprenda como calcular porcentagem com fórmulas e exemplos práticos. Descubra como calcular descontos, aumentos e use nossa calculadora online."
         faq={FAQ_PORCENTAGEM}
+        howTo={HOWTO_PORCENTAGEM}
+        dateModified="2026-04-01"
       />
       <div className="mb-8">
         <div className="inline-flex items-center justify-center p-3 bg-blue-500/10 rounded-xl text-blue-500 mb-4">
@@ -25,11 +47,13 @@ export default function ComoCalcularPorcentagem() {
         <h1 className="text-3xl sm:text-4xl font-display font-bold mb-3">
           Como Calcular Porcentagem
         </h1>
+        <p className="text-lg font-medium text-foreground mb-2">
+          A fórmula da porcentagem é: <strong>porcentagem = (parte ÷ total) × 100</strong>. Exemplo: (45 ÷ 180) × 100 = 25%.
+        </p>
         <p className="text-lg text-muted-foreground">
           Porcentagem está presente no cotidiano: descontos em compras, juros no
-          cartão, aumentos salariais, notas escolares. Entender como calcular
-          porcentagem é uma habilidade prática que facilita decisões financeiras
-          e do dia a dia.
+          cartão, aumentos salariais e notas escolares. Dominar esse cálculo
+          facilita decisões financeiras do dia a dia.
         </p>
       </div>
 
@@ -315,6 +339,12 @@ export default function ComoCalcularPorcentagem() {
             </li>
           </ul>
         </section>
+      </div>
+
+      <div className="mt-6 flex justify-end">
+        <p className="text-xs text-muted-foreground">
+          Revisado pela equipe Fazaconta · Abril de 2026
+        </p>
       </div>
     </div>
   );

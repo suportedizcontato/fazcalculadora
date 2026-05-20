@@ -295,9 +295,11 @@ export default function Porcentagem() {
   return (
     <div className="max-w-2xl mx-auto">
       <PageMeta
-        title="Calculadora de Porcentagem Online Grátis | Fazaconta"
-        description="Calcule porcentagem de forma rápida e fácil. Descubra valores, descontos e aumentos percentuais com nossa calculadora online gratuita."
+        title="Calculadora de Porcentagem Online — Resultado Instantâneo | Fazaconta"
+        description="Calcule porcentagem de forma rápida e gratuita. Desconte, aumente e descubra variações percentuais em segundos. Sem cadastro, resultado imediato."
         faq={PORCENTAGEM_FAQ}
+        softwareApp
+        dateModified="2026-04-01"
       />
       <div className="mb-8">
         <div className="inline-flex items-center justify-center p-3 bg-emerald-50 dark:bg-emerald-900/20 rounded-xl text-emerald-600 mb-4">
@@ -313,6 +315,8 @@ export default function Porcentagem() {
           Calcule porcentagens de forma rápida e gratuita. Use os cinco modos disponíveis: calcular quanto é X% de um valor, descobrir que percentual um valor representa de outro, calcular aumento percentual, calcular desconto percentual e calcular a variação percentual entre dois valores.
         </p>
       </div>
+
+      <AdUnit slot="horizontal" className="mb-6" />
 
       <Card className="border-border shadow-md">
         <CardContent className="p-6 sm:p-8">

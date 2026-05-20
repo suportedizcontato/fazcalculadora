@@ -1,6 +1,26 @@
 import { Link } from "wouter";
 import { Tag, ArrowRight } from "lucide-react";
 import { PageMeta } from "@/components/page-meta";
+import type { HowToStep } from "@/components/page-meta";
+
+const HOWTO_DESCONTO = {
+  name: "Como Calcular Desconto Percentual",
+  description: "Aprenda a calcular o valor final com desconto percentual passo a passo",
+  steps: [
+    {
+      name: "Identifique o valor original e o percentual de desconto",
+      text: "Ex: produto de R$ 200 com 20% de desconto.",
+    },
+    {
+      name: "Calcule o valor do desconto",
+      text: "Multiplique o valor pelo percentual e divida por 100. Ex: (20 × 200) ÷ 100 = R$ 40.",
+    },
+    {
+      name: "Subtraia o desconto do valor original",
+      text: "Valor final = valor original − desconto. Ex: R$ 200 − R$ 40 = R$ 160.",
+    },
+  ] as HowToStep[],
+};
 
 const FAQ_DESCONTO = [
   { question: "Como calcular desconto?", answer: "Multiplique o valor pelo percentual de desconto e divida por 100. Subtraia o resultado do valor original. Exemplo: 20% de desconto em R$ 250 → desconto = R$ 50 → valor final = R$ 200." },
@@ -16,6 +36,8 @@ export default function ComoCalcularDesconto() {
         title="Como Calcular Desconto Percentual | Fórmula e Exemplos | Fazaconta"
         description="Aprenda como calcular desconto percentual com fórmulas e exemplos práticos. Descubra o valor final com desconto de forma simples."
         faq={FAQ_DESCONTO}
+        howTo={HOWTO_DESCONTO}
+        dateModified="2026-04-01"
       />
       <div className="mb-8">
         <div className="inline-flex items-center justify-center p-3 bg-emerald-50 dark:bg-emerald-900/20 rounded-xl text-emerald-600 mb-4">
@@ -272,6 +294,12 @@ export default function ComoCalcularDesconto() {
             </li>
           </ul>
         </section>
+      </div>
+
+      <div className="mt-6 flex justify-end">
+        <p className="text-xs text-muted-foreground">
+          Revisado pela equipe Fazaconta · Abril de 2026
+        </p>
       </div>
     </div>
   );

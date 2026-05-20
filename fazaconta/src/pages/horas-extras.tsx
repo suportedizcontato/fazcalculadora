@@ -310,9 +310,11 @@ export default function HorasExtrasPage() {
   return (
     <div>
       <PageMeta
-        title="Calculadora de Horas Extras e Adicional Noturno CLT | Fazaconta"
-        description="Calcule o valor das horas extras (50% e 100%), adicional noturno e cumulativos pela CLT. Gratuito, sem cadastro, resultado imediato."
+        title="Calculadora de Horas Extras CLT 2026 — Calcule Quanto Vai Receber | Fazaconta"
+        description="Calcule o valor das horas extras (50% e 100%) e adicional noturno pela CLT em segundos. Resultado imediato, gratuito e sem cadastro."
         faq={FAQ_HORAS_EXTRAS}
+        softwareApp
+        dateModified="2026-04-01"
       />
 
       <div className="max-w-2xl mx-auto">
@@ -329,6 +331,8 @@ export default function HorasExtrasPage() {
             CLT.
           </p>
         </div>
+
+        <AdUnit slot="horizontal" className="mb-6" />
 
         {/* Form */}
         <form onSubmit={handleSubmit(onSubmit)} noValidate className="space-y-6">

@@ -81,8 +81,8 @@ export default function Xicaras() {
   return (
     <div className="max-w-2xl mx-auto">
       <PageMeta
-        title="Conversor de Xícaras para ML e Copos | Fazaconta"
-        description="Converta xícaras de receita para mililitros e copos de forma rápida e gratuita. 1 xícara = 240 ml."
+        title="Conversor de Xícaras para ML e Copos — Resultado Imediato | Fazaconta"
+        description="Converta xícaras para ml e copos em segundos. 1 xícara = 240 ml. Ideal para receitas. Gratuito e sem cadastro."
         faq={[
           {
             question: "Quantos ml tem uma xícara de receita?",
@@ -101,6 +101,8 @@ export default function Xicaras() {
             answer: "Um copo americano de 200 ml equivale a aproximadamente 0,83 xícara de chá (240 ml). Ou seja, para encher 1 xícara você precisa de 1,2 copos de 200 ml.",
           },
         ]}
+        softwareApp
+        dateModified="2026-04-01"
       />
       <div className="mb-8">
         <div className="inline-flex items-center justify-center p-3 bg-amber-50 rounded-xl text-amber-600 mb-4">
@@ -111,6 +113,8 @@ export default function Xicaras() {
           Sua receita pede xícaras mas você só tem copos ou medidor de ML? Descubra as equivalências exatas.
         </p>
       </div>
+
+      <AdUnit slot="horizontal" className="mb-6" />
 
       <Card className="border-border shadow-md">
         <CardContent className="p-6 sm:p-8">

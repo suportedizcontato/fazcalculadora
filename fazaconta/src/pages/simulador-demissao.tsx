@@ -551,9 +551,11 @@ export default function SimuladorDemissaoPage() {
   return (
     <div>
       <PageMeta
-        title="Simulador de Demissão CLT — Compare 3 Cenários | Fazaconta"
-        description="Simule os três cenários de demissão (sem justa causa, pedido de demissão e acordo mútuo) e compare as verbas rescisórias gratuitamente."
+        title="Simulador de Demissão 2026 — Compare Rescisão, Pedido e Acordo | Fazaconta"
+        description="Compare os três cenários de demissão (sem justa causa, pedido e acordo mútuo) e veja qual paga mais. Resultado imediato, gratuito e sem cadastro."
         faq={FAQ_SIMULADOR}
+        softwareApp
+        dateModified="2026-04-01"
       />
 
       <div className="max-w-2xl mx-auto">
@@ -570,6 +572,8 @@ export default function SimuladorDemissaoPage() {
             mútuo — e veja qual gera o maior valor líquido.
           </p>
         </div>
+
+        <AdUnit slot="horizontal" className="mb-6" />
 
         {/* Form */}
         <form onSubmit={handleSubmit(onSubmit)} noValidate className="space-y-6">

@@ -17,6 +17,7 @@ export default function QuantoEXPorcentoDeY() {
         title="Quanto é X% de um valor? | Exemplos e Calculadora | Fazaconta"
         description="Descubra quanto é X% de um valor com exemplos práticos. Aprenda a calcular porcentagem e use nossa calculadora online gratuita."
         faq={FAQ_X_PORCENTO}
+        dateModified="2026-04-01"
       />
       <div className="mb-8">
         <div className="inline-flex items-center justify-center p-3 bg-emerald-50 dark:bg-emerald-900/20 rounded-xl text-emerald-600 mb-4">

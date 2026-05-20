@@ -162,9 +162,11 @@ export default function BancoDeHorasPage() {
   return (
     <div>
       <PageMeta
-        title="Calculadora de Banco de Horas CLT | Saldo e Valor Monetário | Fazaconta"
-        description="Calcule o saldo do banco de horas, o valor monetário das horas acumuladas e verifique alertas de prazo e limite diário pela CLT. Gratuito e sem cadastro."
+        title="Calculadora de Banco de Horas CLT 2026 — Saldo e Valor em Dinheiro | Fazaconta"
+        description="Calcule o saldo do banco de horas, quanto vale em dinheiro e alertas de prazo pela CLT. Resultado imediato, gratuito e sem cadastro."
         faq={FAQ}
+        softwareApp
+        dateModified="2026-04-01"
       />
 
       <div className="max-w-2xl mx-auto">
@@ -181,6 +183,8 @@ export default function BancoDeHorasPage() {
             conforme a CLT.
           </p>
         </div>
+
+        <AdUnit slot="horizontal" className="mb-6" />
 
         {/* Form */}
         <form onSubmit={handleSubmit(onSubmit)} noValidate className="space-y-6">

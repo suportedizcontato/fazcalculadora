@@ -1,6 +1,26 @@
 import { Link } from "wouter";
 import { TrendingUp, ArrowRight } from "lucide-react";
 import { PageMeta } from "@/components/page-meta";
+import type { HowToStep } from "@/components/page-meta";
+
+const HOWTO_AUMENTO = {
+  name: "Como Calcular Aumento Percentual",
+  description: "Aprenda a calcular o valor final com aumento percentual passo a passo",
+  steps: [
+    {
+      name: "Identifique o valor original e o percentual de aumento",
+      text: "Ex: salário de R$ 3.000 com reajuste de 10%.",
+    },
+    {
+      name: "Calcule o valor do acréscimo",
+      text: "Multiplique o valor pelo percentual e divida por 100. Ex: (10 × 3.000) ÷ 100 = R$ 300.",
+    },
+    {
+      name: "Some o acréscimo ao valor original",
+      text: "Valor final = valor original + acréscimo. Ex: R$ 3.000 + R$ 300 = R$ 3.300.",
+    },
+  ] as HowToStep[],
+};
 
 const FAQ_AUMENTO = [
   { question: "Como calcular aumento percentual?", answer: "Multiplique o valor pelo percentual de aumento e divida por 100. Some o resultado ao valor original. Exemplo: 10% de aumento em R$ 500 → aumento = R$ 50 → valor final = R$ 550." },
@@ -17,6 +37,8 @@ export default function ComoCalcularAumentoPercentual() {
         title="Como Calcular Aumento Percentual | Fórmula e Exemplos | Fazaconta"
         description="Aprenda como calcular aumento percentual com fórmula e exemplos práticos. Descubra o valor final após reajustes de forma simples."
         faq={FAQ_AUMENTO}
+        howTo={HOWTO_AUMENTO}
+        dateModified="2026-04-01"
       />
       <div className="mb-8">
         <div className="inline-flex items-center justify-center p-3 bg-blue-500/10 rounded-xl text-blue-500 mb-4">
@@ -283,6 +305,12 @@ export default function ComoCalcularAumentoPercentual() {
             </li>
           </ul>
         </section>
+      </div>
+
+      <div className="mt-6 flex justify-end">
+        <p className="text-xs text-muted-foreground">
+          Revisado pela equipe Fazaconta · Abril de 2026
+        </p>
       </div>
     </div>
   );

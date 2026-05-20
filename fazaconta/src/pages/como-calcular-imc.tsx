@@ -1,6 +1,26 @@
 import { Link } from "wouter";
 import { Activity, ArrowRight } from "lucide-react";
 import { PageMeta } from "@/components/page-meta";
+import type { HowToStep } from "@/components/page-meta";
+
+const HOWTO_IMC = {
+  name: "Como Calcular IMC",
+  description: "Aprenda a calcular o Índice de Massa Corporal passo a passo",
+  steps: [
+    {
+      name: "Obtenha seu peso e altura",
+      text: "Meça seu peso em quilogramas (kg) e sua altura em metros (m).",
+    },
+    {
+      name: "Aplique a fórmula",
+      text: "Calcule: IMC = peso (kg) ÷ altura² (m²). Exemplo: 70 ÷ (1,75 × 1,75) = 22,9.",
+    },
+    {
+      name: "Consulte a tabela da OMS",
+      text: "Compare o resultado: abaixo de 18,5 = abaixo do peso; 18,5–24,9 = peso normal; 25–29,9 = sobrepeso; 30 ou mais = obesidade.",
+    },
+  ] as HowToStep[],
+};
 
 const FAQ_IMC = [
   { question: "O que é IMC?", answer: "IMC significa Índice de Massa Corporal. É uma medida calculada a partir do peso e da altura que classifica o estado nutricional em categorias como abaixo do peso, peso normal, sobrepeso e obesidade." },
@@ -17,6 +37,8 @@ export default function ComoCalcularImc() {
         title="Como Calcular IMC | Fórmula, Tabela e Exemplo Prático | Fazaconta"
         description="Aprenda como calcular IMC com fórmula, exemplo prático e tabela completa. Veja como interpretar o resultado e use nossa calculadora de IMC online."
         faq={FAQ_IMC}
+        howTo={HOWTO_IMC}
+        dateModified="2026-04-01"
       />
       <div className="mb-8">
         <div className="inline-flex items-center justify-center p-3 bg-blue-500/10 rounded-xl text-blue-500 mb-4">
@@ -25,10 +47,12 @@ export default function ComoCalcularImc() {
         <h1 className="text-3xl sm:text-4xl font-display font-bold mb-3">
           Como Calcular IMC
         </h1>
+        <p className="text-lg font-medium text-foreground mb-2">
+          A fórmula do IMC é: <strong>IMC = peso (kg) ÷ altura² (m²)</strong>. Exemplo: 70 kg ÷ (1,75 × 1,75) = <strong>22,9</strong> (peso normal).
+        </p>
         <p className="text-lg text-muted-foreground">
-          O IMC (Índice de Massa Corporal) é um índice utilizado para relacionar peso e altura,
-          ajudando a identificar em qual faixa de peso corporal uma pessoa se encontra. Entender
-          como calcular IMC é simples e pode ser o primeiro passo para cuidar melhor da saúde.
+          O IMC (Índice de Massa Corporal) relaciona peso e altura para identificar a faixa de peso
+          corporal. É simples de calcular e pode ser o primeiro passo para cuidar melhor da saúde.
         </p>
       </div>
 
@@ -239,6 +263,12 @@ export default function ComoCalcularImc() {
             </li>
           </ul>
         </section>
+      </div>
+
+      <div className="mt-6 flex justify-end">
+        <p className="text-xs text-muted-foreground">
+          Revisado pela equipe Fazaconta · Abril de 2026
+        </p>
       </div>
     </div>
   );

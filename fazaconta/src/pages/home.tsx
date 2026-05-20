@@ -76,8 +76,9 @@ export default function Home() {
   return (
     <div className="flex flex-col gap-10 sm:gap-16 pb-12">
       <PageMeta
-        title="Fazaconta Online - Calculadoras simples para o dia a dia"
+        title="Fazaconta Online — Calculadoras Gratuitas para o Dia a Dia"
         description="Calculadoras online gratuitas para brasileiros: IMC, porcentagem, consumo de água, xícaras, rescisão CLT e muito mais. Sem cadastro, resultado imediato."
+        isHome
       />
       <section className="text-center w-full max-w-2xl mx-auto mt-4 sm:mt-8">
         <h1 className="text-4xl sm:text-5xl md:text-6xl font-display font-extrabold text-foreground mb-4 sm:mb-6 tracking-tight">

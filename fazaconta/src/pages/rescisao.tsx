@@ -492,8 +492,8 @@ export default function TrabalhistaPage() {
   return (
     <div className="max-w-2xl mx-auto">
       <PageMeta
-        title="Calculadora Trabalhista CLT | Rescisão, Férias e 13º | Fazaconta"
-        description="Calcule rescisão, férias proporcionais e 13º salário pela CLT de forma rápida, gratuita e sem cadastro."
+        title="Calculadora de Rescisão CLT 2026 — Estime Quanto Vai Receber | Fazaconta"
+        description="Calcule férias proporcionais, 13º e multa do FGTS em segundos. Rescisão sem justa causa, pedido de demissão e acordo mútuo. Gratuito, sem cadastro."
         faq={[
           {
             question: "Quais verbas entram na rescisão sem justa causa?",
@@ -512,6 +512,8 @@ export default function TrabalhistaPage() {
             answer: "Sim, exceto em demissão por justa causa, onde o trabalhador perde as férias proporcionais. Férias vencidas (período aquisitivo completo) são pagas em qualquer modalidade de rescisão, inclusive por justa causa.",
           },
         ]}
+        softwareApp
+        dateModified="2026-04-01"
       />
       <div className="mb-8">
         <div className="inline-flex items-center justify-center p-3 bg-indigo-50 dark:bg-indigo-900/20 rounded-xl text-indigo-600 mb-4">
@@ -524,6 +526,8 @@ export default function TrabalhistaPage() {
           Estime rescisão, férias proporcionais e 13º salário de forma rápida e sem cadastro.
         </p>
       </div>
+
+      <AdUnit slot="horizontal" className="mb-6" />
 
       <Card className="border-border shadow-md">
         <CardContent className="p-6 sm:p-8">
