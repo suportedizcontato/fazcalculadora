@@ -15,7 +15,7 @@
 import React from "react";
 import "@testing-library/jest-dom/vitest";
 import { describe, it, expect, vi, afterEach } from "vitest";
-import { render, screen, waitFor, cleanup } from "@testing-library/react";
+import { render, screen, waitFor, cleanup, within } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import TrabalhistaPage from "./rescisao";
 
@@ -75,7 +75,8 @@ async function fillAndSubmitRescisao(
 async function waitForDetailBlock() {
   await waitFor(
     () => {
-      expect(screen.getByText("Saldo de salário")).toBeVisible();
+      const region = screen.getByRole("region", { name: /resultado do cálculo/i });
+      expect(within(region).getByText("Saldo de salário")).toBeVisible();
     },
     { timeout: 10000 }
   );
@@ -101,11 +102,12 @@ describe("7.1 — Submissão com todos os campos válidos (sem-justa-causa)", ()
     await fillAndSubmitRescisao(user);
     await waitForDetailBlock();
 
-    expect(screen.getByText("Saldo de salário")).toBeVisible();
-    expect(screen.getByText("Férias proporcionais")).toBeVisible();
-    expect(screen.getByText("13º proporcional — parte da rescisão")).toBeVisible();
-    expect(screen.getByText("Multa FGTS")).toBeVisible();
-    expect(screen.getByText("Total Estimado")).toBeVisible();
+    const region = screen.getByRole("region", { name: /resultado do cálculo/i });
+    expect(within(region).getByText("Saldo de salário")).toBeVisible();
+    expect(within(region).getByText("Férias proporcionais")).toBeVisible();
+    expect(within(region).getByText("13º proporcional — parte da rescisão")).toBeVisible();
+    expect(within(region).getByText("Multa FGTS")).toBeVisible();
+    expect(within(region).getByText("Total Estimado")).toBeVisible();
   }, 15000);
 
   it("total calculado é correto: salario=3000, anos=2, meses=3, dias=15, meses13=3", async () => {
@@ -187,7 +189,8 @@ describe("7.1 — Submissão com diasTrabalhados = 0", () => {
     });
 
     expect(screen.queryByText(/total estimado da rescisão/i)).not.toBeInTheDocument();
-    expect(screen.queryByText("Saldo de salário")).not.toBeInTheDocument();
+    const region = screen.getByRole("region", { name: /resultado do cálculo/i });
+    expect(within(region).queryByText("Saldo de salário")).not.toBeInTheDocument();
   }, 15000);
 });
 

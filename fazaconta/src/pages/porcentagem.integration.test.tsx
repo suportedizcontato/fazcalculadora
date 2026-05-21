@@ -40,7 +40,7 @@ describe("7.2 — Integração: componente Porcentagem", () => {
 
   it("define document.title correto no mount", () => {
     render(<Porcentagem />);
-    expect(document.title).toBe("Calculadora de Porcentagem Online Grátis | Fazaconta");
+    expect(document.title).toBe("Calculadora de Porcentagem Online — Resultado Instantâneo | Fazaconta");
     cleanup();
   });
 
@@ -63,7 +63,7 @@ describe("7.2 — Integração: componente Porcentagem", () => {
     const meta = document.querySelector('meta[name="description"]');
     expect(meta).not.toBeNull();
     expect(meta!.getAttribute("content")).toBe(
-      "Calcule porcentagem de forma rápida e fácil. Descubra valores, descontos e aumentos percentuais com nossa calculadora online gratuita."
+      "Calcule porcentagem de forma rápida e gratuita. Desconte, aumente e descubra variações percentuais em segundos. Sem cadastro, resultado imediato."
     );
     cleanup();
   });

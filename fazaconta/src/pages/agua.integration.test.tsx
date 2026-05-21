@@ -1,7 +1,7 @@
 import React from "react";
 import "@testing-library/jest-dom/vitest";
 import { describe, it, expect, vi, afterEach } from "vitest";
-import { render, screen, waitFor, cleanup } from "@testing-library/react";
+import { render, screen, waitFor, cleanup, within } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import Agua from "./agua";
 
@@ -102,9 +102,10 @@ describe("Integração: Calculadora de Consumo de Água", () => {
     await waitFor(() => {
       expect(screen.getByText(/meta diária/i)).toBeInTheDocument();
     });
+    const resultRegion = screen.getByRole("region", { name: /resultado do consumo/i });
     expect(screen.getByText(/2\.468|2468/)).toBeInTheDocument();
-    expect(screen.getByText(/litros/i)).toBeInTheDocument();
-    expect(screen.getByText(/copos/i)).toBeInTheDocument();
+    expect(within(resultRegion).getByText(/litros/i)).toBeInTheDocument();
+    expect(within(resultRegion).getByText(/copos/i)).toBeInTheDocument();
   });
 
   it("exibe aviso educativo após resultado válido", async () => {
@@ -116,7 +117,7 @@ describe("Integração: Calculadora de Consumo de Água", () => {
     await waitFor(() => {
       expect(screen.getByText(/meta diária/i)).toBeInTheDocument();
     });
-    expect(screen.getByText(/variação individual|hidratação|médico|profissional/i)).toBeInTheDocument();
+    expect(screen.getAllByText(/variação individual|hidratação|médico|profissional/i).length).toBeGreaterThan(0);
   });
 
   it("oculta resultado ao modificar o campo após exibição", async () => {

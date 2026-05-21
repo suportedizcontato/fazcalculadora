@@ -15,7 +15,7 @@
 import React from "react";
 import "@testing-library/jest-dom/vitest";
 import { describe, it, expect, vi, afterEach } from "vitest";
-import { render, screen, waitFor, cleanup } from "@testing-library/react";
+import { render, screen, waitFor, cleanup, within } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import TrabalhistaPage from "./rescisao";
 
@@ -112,7 +112,8 @@ describe("6.2 — ResultBox: revelação após submit do módulo Rescisão", () 
     }, { timeout: 10000 });
 
     // Narrativa deve conter "Saldo de salário" value — R$ 1.500,00
-    const narrativeEl = screen.getByText(/rescisão sem justa causa/i);
+    const resultRegion = document.querySelector('[aria-label="Resultado do cálculo"]') as HTMLElement;
+    const narrativeEl = within(resultRegion).getByText(/rescisão sem justa causa/i);
     expect(narrativeEl).toBeVisible();
     // Narrative should mention the saldo value
     expect(narrativeEl.textContent).toMatch(/1\.500,00/);

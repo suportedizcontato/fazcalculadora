@@ -41,7 +41,7 @@ describe("Integração: CalculadoraImc", () => {
   // 5.2 — Montagem
   it("define document.title correto no mount", () => {
     render(<CalculadoraImc />);
-    expect(document.title).toBe("Calculadora de IMC Online Grátis | Fazaconta");
+    expect(document.title).toBe("Calculadora de IMC Online | Descubra Seu Peso Ideal | Fazaconta");
     cleanup();
   });
 
@@ -50,7 +50,7 @@ describe("Integração: CalculadoraImc", () => {
     const meta = document.querySelector('meta[name="description"]');
     expect(meta).not.toBeNull();
     expect(meta!.getAttribute("content")).toBe(
-      "Calcule seu IMC de forma rápida e fácil. Descubra se você está no peso ideal com nossa calculadora online gratuita."
+      "Calcule seu IMC em segundos e descubra se está no peso ideal. Fórmula da OMS, tabela completa e resultado imediato. Gratuito, sem cadastro."
     );
     cleanup();
   });

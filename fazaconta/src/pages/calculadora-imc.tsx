@@ -20,6 +20,8 @@ import {
   calculateBMI,
   classifyBMI,
   normalizeDecimal,
+  BmiScaleIndicator,
+  IMC_DISCLAIMER,
 } from "@/pages/imc";
 
 const imcFormSchema = z.object({
@@ -89,6 +91,17 @@ export default function CalculadoraImc() {
         title="Calculadora de IMC Online | Descubra Seu Peso Ideal | Fazaconta"
         description="Calcule seu IMC em segundos e descubra se está no peso ideal. Fórmula da OMS, tabela completa e resultado imediato. Gratuito, sem cadastro."
         faq={IMC_FAQ}
+        howTo={{
+          name: "Como calcular o IMC",
+          description: "Passo a passo para calcular o Índice de Massa Corporal usando a fórmula da OMS.",
+          steps: [
+            { name: "Meça seu peso", text: "Anote seu peso em quilogramas (kg). Exemplo: 70 kg." },
+            { name: "Meça sua altura", text: "Anote sua altura em metros (m). Exemplo: 1,75 m." },
+            { name: "Eleve a altura ao quadrado", text: "Multiplique a altura por ela mesma. Exemplo: 1,75 × 1,75 = 3,0625." },
+            { name: "Divida peso por altura²", text: "IMC = 70 ÷ 3,0625 ≈ 22,9." },
+            { name: "Consulte a tabela da OMS", text: "Verifique na tabela abaixo em qual categoria seu IMC se encaixa (Peso normal: 18,5–24,9)." },
+          ],
+        }}
         softwareApp
         dateModified="2026-04-01"
       />
@@ -166,9 +179,19 @@ export default function CalculadoraImc() {
               value={resultText}
               variant={result?.variant}
             />
+            {result !== null && (
+              <>
+                <BmiScaleIndicator imc={result.imc} />
+                <p className="mt-3 text-xs text-muted-foreground text-center leading-relaxed">
+                  {IMC_DISCLAIMER}
+                </p>
+              </>
+            )}
           </div>
         </CardContent>
       </Card>
+
+      <AdUnit slot="inContent" className="mt-6" />
 
       <div className="mt-10 space-y-8 text-base text-foreground">
         <section>
@@ -195,27 +218,53 @@ export default function CalculadoraImc() {
         </section>
 
         <section>
-          <h2 className="text-xl font-semibold mb-3">Tabela de IMC</h2>
-          <ul className="list-disc list-inside space-y-1 text-muted-foreground">
-            <li>
-              <strong>Abaixo do peso:</strong> IMC abaixo de 18,5
-            </li>
-            <li>
-              <strong>Peso normal:</strong> IMC entre 18,5 e 24,9
-            </li>
-            <li>
-              <strong>Sobrepeso:</strong> IMC entre 25,0 e 29,9
-            </li>
-            <li>
-              <strong>Obesidade grau I:</strong> IMC entre 30,0 e 34,9
-            </li>
-            <li>
-              <strong>Obesidade grau II:</strong> IMC entre 35,0 e 39,9
-            </li>
-            <li>
-              <strong>Obesidade grau III:</strong> IMC igual ou superior a 40,0
-            </li>
-          </ul>
+          <h2 className="text-xl font-semibold mb-3">Tabela de IMC (OMS)</h2>
+          <div className="overflow-x-auto rounded-xl border border-border">
+            <table className="w-full text-sm text-left">
+              <thead className="bg-muted/60">
+                <tr>
+                  <th className="px-4 py-3 font-semibold">IMC</th>
+                  <th className="px-4 py-3 font-semibold">Classificação</th>
+                  <th className="px-4 py-3 font-semibold">Risco de comorbidades</th>
+                </tr>
+              </thead>
+              <tbody className="divide-y divide-border">
+                <tr className="bg-blue-500/5">
+                  <td className="px-4 py-3">Abaixo de 18,5</td>
+                  <td className="px-4 py-3 font-medium text-blue-600 dark:text-blue-400">Abaixo do peso</td>
+                  <td className="px-4 py-3 text-muted-foreground">Elevado</td>
+                </tr>
+                <tr className="bg-green-500/5">
+                  <td className="px-4 py-3">18,5 – 24,9</td>
+                  <td className="px-4 py-3 font-medium text-green-600 dark:text-green-400">Peso normal</td>
+                  <td className="px-4 py-3 text-muted-foreground">Baixo</td>
+                </tr>
+                <tr className="bg-yellow-500/5">
+                  <td className="px-4 py-3">25,0 – 29,9</td>
+                  <td className="px-4 py-3 font-medium text-yellow-600 dark:text-yellow-400">Sobrepeso</td>
+                  <td className="px-4 py-3 text-muted-foreground">Médio</td>
+                </tr>
+                <tr className="bg-orange-500/5">
+                  <td className="px-4 py-3">30,0 – 34,9</td>
+                  <td className="px-4 py-3 font-medium text-orange-600 dark:text-orange-400">Obesidade grau I</td>
+                  <td className="px-4 py-3 text-muted-foreground">Alto</td>
+                </tr>
+                <tr className="bg-red-500/5">
+                  <td className="px-4 py-3">35,0 – 39,9</td>
+                  <td className="px-4 py-3 font-medium text-red-600 dark:text-red-400">Obesidade grau II</td>
+                  <td className="px-4 py-3 text-muted-foreground">Muito alto</td>
+                </tr>
+                <tr className="bg-red-900/10">
+                  <td className="px-4 py-3">≥ 40,0</td>
+                  <td className="px-4 py-3 font-medium text-red-700 dark:text-red-300">Obesidade grau III</td>
+                  <td className="px-4 py-3 text-muted-foreground">Extremamente alto</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <p className="text-xs text-muted-foreground mt-2">
+            Fonte: Organização Mundial da Saúde (OMS) — classificação para adultos (18–65 anos).
+          </p>
         </section>
 
         <section>

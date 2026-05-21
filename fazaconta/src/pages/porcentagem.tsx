@@ -392,6 +392,95 @@ export default function Porcentagem() {
 
       <div className="mt-10 space-y-8 text-base text-foreground">
         <section>
+          <h2 className="text-xl font-semibold mb-4">Fórmulas de referência para cálculo de porcentagem</h2>
+          <div className="overflow-x-auto rounded-xl border border-border">
+            <table className="w-full text-sm">
+              <thead>
+                <tr className="bg-muted/50 border-b border-border">
+                  <th className="text-left px-4 py-3 font-semibold">Tipo de cálculo</th>
+                  <th className="text-left px-4 py-3 font-semibold">Fórmula</th>
+                  <th className="text-left px-4 py-3 font-semibold">Exemplo</th>
+                </tr>
+              </thead>
+              <tbody className="divide-y divide-border text-muted-foreground">
+                <tr>
+                  <td className="px-4 py-2.5 font-medium text-foreground">Quanto é X% de Y?</td>
+                  <td className="px-4 py-2.5 font-mono">Y × X ÷ 100</td>
+                  <td className="px-4 py-2.5">10% de 200 = <strong>20</strong></td>
+                </tr>
+                <tr>
+                  <td className="px-4 py-2.5 font-medium text-foreground">A é quantos % de B?</td>
+                  <td className="px-4 py-2.5 font-mono">(A ÷ B) × 100</td>
+                  <td className="px-4 py-2.5">50 é <strong>25%</strong> de 200</td>
+                </tr>
+                <tr>
+                  <td className="px-4 py-2.5 font-medium text-foreground">Aumento percentual</td>
+                  <td className="px-4 py-2.5 font-mono">Valor × (1 + X÷100)</td>
+                  <td className="px-4 py-2.5">100 + 10% = <strong>110</strong></td>
+                </tr>
+                <tr>
+                  <td className="px-4 py-2.5 font-medium text-foreground">Desconto percentual</td>
+                  <td className="px-4 py-2.5 font-mono">Valor × (1 − X÷100)</td>
+                  <td className="px-4 py-2.5">100 − 10% = <strong>90</strong></td>
+                </tr>
+                <tr>
+                  <td className="px-4 py-2.5 font-medium text-foreground">Variação percentual</td>
+                  <td className="px-4 py-2.5 font-mono">((Final − Inicial) ÷ Inicial) × 100</td>
+                  <td className="px-4 py-2.5">De 80 para 100 = <strong>+25%</strong></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <section>
+          <h2 className="text-xl font-semibold mb-3">Referência rápida: como calcular porcentagens comuns</h2>
+          <div className="overflow-x-auto rounded-xl border border-border">
+            <table className="w-full text-sm">
+              <thead>
+                <tr className="bg-muted/50 border-b border-border">
+                  <th className="text-left px-4 py-3 font-semibold">Percentual</th>
+                  <th className="text-left px-4 py-3 font-semibold">Atalho mental</th>
+                  <th className="text-left px-4 py-3 font-semibold">Exemplo em R$&nbsp;500</th>
+                </tr>
+              </thead>
+              <tbody className="divide-y divide-border text-muted-foreground">
+                <tr>
+                  <td className="px-4 py-2 font-medium text-foreground">1%</td>
+                  <td className="px-4 py-2">÷ 100</td>
+                  <td className="px-4 py-2"><strong>R$&nbsp;5,00</strong></td>
+                </tr>
+                <tr>
+                  <td className="px-4 py-2 font-medium text-foreground">5%</td>
+                  <td className="px-4 py-2">÷ 20</td>
+                  <td className="px-4 py-2"><strong>R$&nbsp;25,00</strong></td>
+                </tr>
+                <tr>
+                  <td className="px-4 py-2 font-medium text-foreground">10%</td>
+                  <td className="px-4 py-2">÷ 10</td>
+                  <td className="px-4 py-2"><strong>R$&nbsp;50,00</strong></td>
+                </tr>
+                <tr>
+                  <td className="px-4 py-2 font-medium text-foreground">20%</td>
+                  <td className="px-4 py-2">÷ 5</td>
+                  <td className="px-4 py-2"><strong>R$&nbsp;100,00</strong></td>
+                </tr>
+                <tr>
+                  <td className="px-4 py-2 font-medium text-foreground">25%</td>
+                  <td className="px-4 py-2">÷ 4</td>
+                  <td className="px-4 py-2"><strong>R$&nbsp;125,00</strong></td>
+                </tr>
+                <tr>
+                  <td className="px-4 py-2 font-medium text-foreground">50%</td>
+                  <td className="px-4 py-2">÷ 2</td>
+                  <td className="px-4 py-2"><strong>R$&nbsp;250,00</strong></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <section>
           <h2 className="text-xl font-semibold mb-3">Como calcular porcentagem?</h2>
           <p className="text-muted-foreground mb-3">
             Para calcular porcentagem de um número, divida a parte pelo total e multiplique por 100.
@@ -494,6 +583,30 @@ export default function Porcentagem() {
           </p>
         </section>
       </div>
+
+      <section className="mt-10 p-5 bg-card rounded-2xl border border-border">
+        <h2 className="font-semibold text-foreground mb-3">Aprenda mais sobre porcentagem</h2>
+        <ul className="space-y-2 text-sm">
+          <li>
+            <Link href="/como-calcular-porcentagem" className="text-primary hover:underline font-medium">
+              Como calcular porcentagem passo a passo
+            </Link>
+            <span className="text-muted-foreground"> — guia completo com exemplos práticos</span>
+          </li>
+          <li>
+            <Link href="/como-calcular-desconto" className="text-primary hover:underline font-medium">
+              Como calcular desconto
+            </Link>
+            <span className="text-muted-foreground"> — preço com desconto, desconto em reais e percentual de desconto</span>
+          </li>
+          <li>
+            <Link href="/como-calcular-aumento-percentual" className="text-primary hover:underline font-medium">
+              Como calcular aumento percentual
+            </Link>
+            <span className="text-muted-foreground"> — reajuste salarial, inflação e variação de preço</span>
+          </li>
+        </ul>
+      </section>
 
       <RelatedCalculators />
 

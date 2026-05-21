@@ -111,8 +111,9 @@ describe("7.2 — Integração: validação e fluxo do formulário", () => {
     await waitFor(() => {
       expect(screen.getByText(/classificação:.*peso normal/i)).toBeInTheDocument();
     });
-    // Verifica o valor numérico do IMC
-    expect(screen.getByText(/22[.,]86/)).toBeInTheDocument();
+    // Verifica o valor numérico do IMC na região de resultado
+    const region = screen.getByRole("region", { name: /resultado do imc/i });
+    expect(region).toHaveTextContent(/22[.,]86/);
   });
 
   it("esconde o resultado imediatamente ao modificar um campo após exibição", async () => {

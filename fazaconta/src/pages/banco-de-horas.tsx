@@ -522,6 +522,8 @@ export default function BancoDeHorasPage() {
         </div>
       </div>
 
+      <AdUnit slot="inContent" className="mt-8" />
+
       {/* ── Seção educativa ──────────────────────────────────────────────── */}
       <div className="mt-16 space-y-12 border-t border-border pt-12">
 

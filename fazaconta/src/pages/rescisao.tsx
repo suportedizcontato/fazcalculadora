@@ -901,7 +901,128 @@ export default function TrabalhistaPage() {
         Revisado pela equipe Fazaconta · Abril de 2026
       </p>
 
-      <AdUnit slot="bottom" className="mt-8" />
+      <AdUnit slot="inContent" className="mt-6" />
+
+      <div className="mt-10 space-y-8 text-base text-foreground">
+        <section>
+          <h2 className="text-xl font-semibold mb-4">Como calcular a rescisão trabalhista pela CLT?</h2>
+          <p className="text-muted-foreground mb-4">
+            A rescisão envolve o pagamento de verbas específicas que variam conforme o tipo de desligamento. As principais fórmulas utilizadas são:
+          </p>
+          <div className="space-y-3">
+            <div className="bg-muted/50 rounded-xl px-5 py-3">
+              <p className="text-sm font-semibold mb-1">Saldo de salário</p>
+              <p className="font-mono text-sm text-muted-foreground">Salário ÷ 30 × Dias trabalhados no mês da demissão</p>
+            </div>
+            <div className="bg-muted/50 rounded-xl px-5 py-3">
+              <p className="text-sm font-semibold mb-1">Férias proporcionais (com 1/3 constitucional)</p>
+              <p className="font-mono text-sm text-muted-foreground">(Salário ÷ 12) × Meses aquisitivos × 1,3333</p>
+            </div>
+            <div className="bg-muted/50 rounded-xl px-5 py-3">
+              <p className="text-sm font-semibold mb-1">13º salário proporcional</p>
+              <p className="font-mono text-sm text-muted-foreground">Salário ÷ 12 × Meses trabalhados no ano</p>
+            </div>
+            <div className="bg-muted/50 rounded-xl px-5 py-3">
+              <p className="text-sm font-semibold mb-1">Multa do FGTS — demissão sem justa causa</p>
+              <p className="font-mono text-sm text-muted-foreground">Saldo total depositado no FGTS × 40%</p>
+            </div>
+            <div className="bg-muted/50 rounded-xl px-5 py-3">
+              <p className="text-sm font-semibold mb-1">Multa do FGTS — acordo mútuo (Art. 484-A da CLT)</p>
+              <p className="font-mono text-sm text-muted-foreground">Saldo total depositado no FGTS × 20%</p>
+            </div>
+          </div>
+        </section>
+
+        <section>
+          <h2 className="text-xl font-semibold mb-4">O que cada tipo de desligamento paga?</h2>
+          <div className="overflow-x-auto rounded-xl border border-border">
+            <table className="w-full text-sm">
+              <thead>
+                <tr className="bg-muted/50 border-b border-border">
+                  <th className="text-left px-4 py-3 font-semibold">Verba</th>
+                  <th className="text-center px-3 py-3 font-semibold">Sem justa causa</th>
+                  <th className="text-center px-3 py-3 font-semibold">Pedido demissão</th>
+                  <th className="text-center px-3 py-3 font-semibold">Justa causa</th>
+                  <th className="text-center px-3 py-3 font-semibold">Acordo mútuo</th>
+                </tr>
+              </thead>
+              <tbody className="divide-y divide-border">
+                <tr>
+                  <td className="px-4 py-2.5 font-medium text-foreground">Saldo de salário</td>
+                  <td className="text-center px-3 py-2.5 text-green-600 dark:text-green-400">✅</td>
+                  <td className="text-center px-3 py-2.5 text-green-600 dark:text-green-400">✅</td>
+                  <td className="text-center px-3 py-2.5 text-green-600 dark:text-green-400">✅</td>
+                  <td className="text-center px-3 py-2.5 text-green-600 dark:text-green-400">✅</td>
+                </tr>
+                <tr>
+                  <td className="px-4 py-2.5 font-medium text-foreground">Férias proporcionais</td>
+                  <td className="text-center px-3 py-2.5 text-green-600 dark:text-green-400">✅</td>
+                  <td className="text-center px-3 py-2.5 text-green-600 dark:text-green-400">✅</td>
+                  <td className="text-center px-3 py-2.5 text-red-500">❌</td>
+                  <td className="text-center px-3 py-2.5 text-green-600 dark:text-green-400">✅</td>
+                </tr>
+                <tr>
+                  <td className="px-4 py-2.5 font-medium text-foreground">13º proporcional</td>
+                  <td className="text-center px-3 py-2.5 text-green-600 dark:text-green-400">✅</td>
+                  <td className="text-center px-3 py-2.5 text-green-600 dark:text-green-400">✅</td>
+                  <td className="text-center px-3 py-2.5 text-red-500">❌</td>
+                  <td className="text-center px-3 py-2.5 text-green-600 dark:text-green-400">✅</td>
+                </tr>
+                <tr>
+                  <td className="px-4 py-2.5 font-medium text-foreground">Multa FGTS</td>
+                  <td className="text-center px-3 py-2.5 text-green-600 dark:text-green-400 font-medium">40%</td>
+                  <td className="text-center px-3 py-2.5 text-red-500">❌</td>
+                  <td className="text-center px-3 py-2.5 text-red-500">❌</td>
+                  <td className="text-center px-3 py-2.5 text-yellow-600 dark:text-yellow-400 font-medium">20%</td>
+                </tr>
+                <tr>
+                  <td className="px-4 py-2.5 font-medium text-foreground">Seguro-desemprego</td>
+                  <td className="text-center px-3 py-2.5 text-green-600 dark:text-green-400">✅</td>
+                  <td className="text-center px-3 py-2.5 text-red-500">❌</td>
+                  <td className="text-center px-3 py-2.5 text-red-500">❌</td>
+                  <td className="text-center px-3 py-2.5 text-red-500">❌</td>
+                </tr>
+                <tr>
+                  <td className="px-4 py-2.5 font-medium text-foreground">Aviso prévio</td>
+                  <td className="text-center px-3 py-2.5 text-muted-foreground">Indenizado</td>
+                  <td className="text-center px-3 py-2.5 text-yellow-600 dark:text-yellow-400">Pode ser deduzido</td>
+                  <td className="text-center px-3 py-2.5 text-red-500">❌</td>
+                  <td className="text-center px-3 py-2.5 text-muted-foreground">50%</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <p className="text-xs text-muted-foreground mt-2">
+            Fonte: CLT (Decreto-Lei nº 5.452/1943) e Lei nº 13.467/2017 (Reforma Trabalhista). Acordo mútuo regulado pelo Art. 484-A da CLT.
+          </p>
+        </section>
+
+        <AdUnit slot="bottom" className="mt-4" />
+
+        <section>
+          <h2 className="text-xl font-semibold mb-3">Perguntas frequentes sobre rescisão CLT</h2>
+
+          <h3 className="font-semibold mt-4 mb-1">Quais verbas entram na rescisão sem justa causa?</h3>
+          <p className="text-muted-foreground">
+            Na demissão sem justa causa o trabalhador tem direito a: saldo de salário, férias proporcionais com 1/3 constitucional, 13º proporcional, aviso prévio (trabalhado ou indenizado) e multa de <strong>40% sobre o saldo total do FGTS</strong> depositado durante o contrato.
+          </p>
+
+          <h3 className="font-semibold mt-4 mb-1">O que é a multa de 40% do FGTS?</h3>
+          <p className="text-muted-foreground">
+            É uma indenização calculada sobre o saldo total de todos os depósitos de FGTS feitos durante o contrato (8% do salário mensal). O empregador deposita diretamente na conta do FGTS do trabalhador. No acordo mútuo (Art. 484-A da CLT), a multa é de 20% e o trabalhador pode sacar apenas 80% do saldo.
+          </p>
+
+          <h3 className="font-semibold mt-4 mb-1">Qual a diferença entre acordo mútuo e pedido de demissão?</h3>
+          <p className="text-muted-foreground">
+            No <strong>pedido de demissão</strong>, o trabalhador não recebe multa do FGTS, aviso prévio indenizado nem seguro-desemprego — e pode ter o valor de um salário deduzido se não cumprir o aviso prévio. No <strong>acordo mútuo</strong>, incluído pela Reforma Trabalhista de 2017, há multa de 20% e aviso prévio de 50%, porém sem direito ao seguro-desemprego.
+          </p>
+
+          <h3 className="font-semibold mt-4 mb-1">Férias proporcionais são sempre pagas na rescisão?</h3>
+          <p className="text-muted-foreground">
+            Não. Em caso de <strong>demissão por justa causa</strong>, o trabalhador perde as férias proporcionais do período aquisitivo em andamento. Férias vencidas (período aquisitivo completo, já adquirido) são devidas em qualquer modalidade de rescisão, inclusive na justa causa, conforme o Art. 146 da CLT.
+          </p>
+        </section>
+      </div>
 
       <RelatedCalculators />
     </div>

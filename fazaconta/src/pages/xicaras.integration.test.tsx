@@ -1,7 +1,7 @@
 import React from "react";
 import "@testing-library/jest-dom/vitest";
 import { describe, it, expect, vi, afterEach } from "vitest";
-import { render, screen, waitFor, cleanup } from "@testing-library/react";
+import { render, screen, waitFor, cleanup, within } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import Xicaras from "./xicaras";
 
@@ -76,8 +76,9 @@ describe("Integração: Conversor de Xícaras", () => {
       await user.type(xicarasInput, "2");
       await user.click(submitBtn);
 
+      const region = screen.getByRole("region", { name: /resultado da conversão/i });
       await waitFor(() => {
-        expect(screen.getByText(/480/)).toBeInTheDocument();
+        expect(within(region).getByText(/480/)).toBeInTheDocument();
         // The unit "ml" appears as a <span> child inside the result value
         expect(screen.getAllByText(/\bml\b/i).length).toBeGreaterThanOrEqual(1);
       });
@@ -92,10 +93,11 @@ describe("Integração: Conversor de Xícaras", () => {
       await user.type(xicarasInput, "2");
       await user.click(submitBtn);
 
+      const region = screen.getByRole("region", { name: /resultado da conversão/i });
       await waitFor(() => {
-        expect(screen.getByText(/480/)).toBeInTheDocument();
+        expect(within(region).getByText(/480/)).toBeInTheDocument();
         expect(screen.getAllByText(/\bml\b/i).length).toBeGreaterThanOrEqual(1);
-        expect(screen.getByText(/2[,.]4 copos/i)).toBeInTheDocument();
+        expect(within(region).getByText(/2[,.]4 copos/i)).toBeInTheDocument();
       });
     });
 
@@ -105,9 +107,10 @@ describe("Integração: Conversor de Xícaras", () => {
       await user.type(xicarasInput, "1,5");
       await user.click(submitBtn);
 
+      const region = screen.getByRole("region", { name: /resultado da conversão/i });
       await waitFor(() => {
-        expect(screen.getByText(/360/)).toBeInTheDocument();
-        expect(screen.getByText(/1[,.]8 copos/i)).toBeInTheDocument();
+        expect(within(region).getByText(/360/)).toBeInTheDocument();
+        expect(within(region).getByText(/1[,.]8 copos/i)).toBeInTheDocument();
       });
     });
 
@@ -117,8 +120,9 @@ describe("Integração: Conversor de Xícaras", () => {
       await user.type(xicarasInput, "0.25");
       await user.click(submitBtn);
 
+      const region = screen.getByRole("region", { name: /resultado da conversão/i });
       await waitFor(() => {
-        expect(screen.getByText(/60/)).toBeInTheDocument();
+        expect(within(region).getByText(/60/)).toBeInTheDocument();
         expect(screen.getAllByText(/\bml\b/i).length).toBeGreaterThanOrEqual(1);
       });
     });
@@ -219,15 +223,16 @@ describe("Integração: Conversor de Xícaras", () => {
       await user.type(xicarasInput, "2");
       await user.click(submitBtn);
 
+      const region = screen.getByRole("region", { name: /resultado da conversão/i });
       await waitFor(() => {
-        expect(screen.getByText(/480/)).toBeInTheDocument();
+        expect(within(region).getByText(/480/)).toBeInTheDocument();
       });
 
       // Edit the field — result area should disappear
       await user.type(xicarasInput, "3");
 
       await waitFor(() => {
-        expect(screen.queryByText(/480/)).not.toBeInTheDocument();
+        expect(within(region).queryByText(/480/)).not.toBeInTheDocument();
       });
     });
   });

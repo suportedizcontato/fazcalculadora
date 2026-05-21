@@ -21,7 +21,7 @@
 import React from "react";
 import "@testing-library/jest-dom/vitest";
 import { describe, it, expect, vi, afterEach } from "vitest";
-import { render, screen, waitFor, cleanup } from "@testing-library/react";
+import { render, screen, waitFor, cleanup, within } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import TrabalhistaPage from "./rescisao";
 
@@ -75,7 +75,8 @@ async function fillAndSubmitRescisaoDefault(user: ReturnType<typeof userEvent.se
 /** Espera que o DetailBlock apareça (label "Saldo de salário" só existe no DetailBlock) */
 async function waitForDetailBlock() {
   await waitFor(() => {
-    expect(screen.getByText("Saldo de salário")).toBeVisible();
+    const region = screen.getByRole("region", { name: /resultado do cálculo/i });
+    expect(within(region).getByText("Saldo de salário")).toBeVisible();
   }, { timeout: 10000 });
 }
 
@@ -96,9 +97,10 @@ describe("6.1 — ResultDetailBlock: não exibido antes do cálculo", () => {
   it("labels exclusivos do DetailBlock não aparecem no estado inicial", () => {
     setup();
     // These labels only appear in ResultDetailBlock, never in form or page subtitle
-    expect(screen.queryByText("Saldo de salário")).not.toBeInTheDocument();
-    expect(screen.queryByText("13º proporcional — parte da rescisão")).not.toBeInTheDocument();
-    expect(screen.queryByText("Total Estimado")).not.toBeInTheDocument();
+    const region = screen.getByRole("region", { name: /resultado do cálculo/i });
+    expect(within(region).queryByText("Saldo de salário")).not.toBeInTheDocument();
+    expect(within(region).queryByText("13º proporcional — parte da rescisão")).not.toBeInTheDocument();
+    expect(within(region).queryByText("Total Estimado")).not.toBeInTheDocument();
   });
 });
 
@@ -110,11 +112,12 @@ describe("6.1 — Módulo Rescisão: itens do ResultDetailBlock (sem-justa-causa
     await fillAndSubmitRescisaoDefault(user);
     await waitForDetailBlock();
 
-    expect(screen.getByText("Saldo de salário")).toBeVisible();
-    expect(screen.getByText("Férias proporcionais")).toBeVisible();
-    expect(screen.getByText("13º proporcional — parte da rescisão")).toBeVisible();
-    expect(screen.getByText("Multa FGTS")).toBeVisible();
-    expect(screen.getByText("Total Estimado")).toBeVisible();
+    const region = screen.getByRole("region", { name: /resultado do cálculo/i });
+    expect(within(region).getByText("Saldo de salário")).toBeVisible();
+    expect(within(region).getByText("Férias proporcionais")).toBeVisible();
+    expect(within(region).getByText("13º proporcional — parte da rescisão")).toBeVisible();
+    expect(within(region).getByText("Multa FGTS")).toBeVisible();
+    expect(within(region).getByText("Total Estimado")).toBeVisible();
   }, 15000);
 
   it("item 'Total Estimado' possui destaque (font-bold)", async () => {
@@ -122,7 +125,8 @@ describe("6.1 — Módulo Rescisão: itens do ResultDetailBlock (sem-justa-causa
     await fillAndSubmitRescisaoDefault(user);
     await waitForDetailBlock();
 
-    expect(screen.getByText("Total Estimado")).toHaveClass("font-bold");
+    const region = screen.getByRole("region", { name: /resultado do cálculo/i });
+    expect(within(region).getByText("Total Estimado")).toHaveClass("font-bold");
   }, 15000);
 
   it("dedução de aviso prévio NÃO aparece para sem-justa-causa (aviso cumprido default)", async () => {
@@ -148,11 +152,12 @@ describe("6.1 — Módulo Rescisão: itens do ResultDetailBlock (sem-justa-causa
     await fillAndSubmitRescisaoDefault(user);
     await waitForDetailBlock();
 
-    const saldo = screen.getByText("Saldo de salário");
-    const ferias = screen.getByText("Férias proporcionais");
-    const decimo = screen.getByText("13º proporcional — parte da rescisão");
-    const multa = screen.getByText("Multa FGTS");
-    const total = screen.getByText("Total Estimado");
+    const region = screen.getByRole("region", { name: /resultado do cálculo/i });
+    const saldo = within(region).getByText("Saldo de salário");
+    const ferias = within(region).getByText("Férias proporcionais");
+    const decimo = within(region).getByText("13º proporcional — parte da rescisão");
+    const multa = within(region).getByText("Multa FGTS");
+    const total = within(region).getByText("Total Estimado");
 
     const labels = [saldo, ferias, decimo, multa, total];
     for (let i = 0; i < labels.length - 1; i++) {
@@ -261,10 +266,12 @@ describe("6.1 — Módulo 13º: itens do ResultDetailBlock", () => {
     await user.click(screen.getByRole("button", { name: /calcular 13º salário/i }));
 
     await waitFor(() => {
-      expect(screen.getByText("13º salário proporcional")).toBeVisible();
+      const region = screen.getByRole("region", { name: /resultado do cálculo/i });
+      expect(within(region).getByText("13º salário proporcional")).toBeVisible();
     }, { timeout: 10000 });
 
-    expect(screen.getByText("13º salário proporcional")).toHaveClass("font-bold");
+    const region = screen.getByRole("region", { name: /resultado do cálculo/i });
+    expect(within(region).getByText("13º salário proporcional")).toHaveClass("font-bold");
   }, 15000);
 
   it("exibe R$ 1.500,00 para salário=3000 e 6 meses (3000/12*6=1500)", async () => {
@@ -291,7 +298,8 @@ describe("6.1 — Módulo 13º: itens do ResultDetailBlock", () => {
     await user.click(screen.getByRole("button", { name: /calcular 13º salário/i }));
 
     await waitFor(() => {
-      expect(screen.getByText("13º salário proporcional")).toBeVisible();
+      const region = screen.getByRole("region", { name: /resultado do cálculo/i });
+      expect(within(region).getByText("13º salário proporcional")).toBeVisible();
     }, { timeout: 10000 });
 
     expect(screen.queryByText(/aviso legal/i)).not.toBeInTheDocument();

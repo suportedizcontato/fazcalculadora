@@ -165,6 +165,98 @@ export default function Agua() {
           </div>
         </CardContent>
       </Card>
+      <AdUnit slot="inContent" className="mt-6" />
+
+      <div className="mt-10 space-y-8 text-base text-foreground">
+        <section>
+          <h2 className="text-xl font-semibold mb-3">Como funciona o cálculo?</h2>
+          <p className="text-muted-foreground mb-4">
+            A fórmula mais utilizada por nutricionistas para estimar a hidratação diária é baseada
+            no peso corporal:
+          </p>
+          <div className="bg-muted/60 rounded-xl px-5 py-4 font-mono text-center text-base border border-border">
+            Consumo diário (ml) = Peso (kg) × 35 ml
+          </div>
+          <p className="text-muted-foreground mt-3">
+            Essa referência é amplamente adotada porque o metabolismo basal e a eliminação de água
+            — pela urina, suor e respiração — são proporcionais à massa corporal. Segundo a{" "}
+            <strong>Sociedade Brasileira de Nefrologia</strong>, adultos saudáveis devem ingerir
+            entre 1,5 L e 3 L de água por dia, dependendo de fatores individuais.
+          </p>
+        </section>
+
+        <section>
+          <h2 className="text-xl font-semibold mb-3">Tabela de referência por peso</h2>
+          <div className="overflow-x-auto rounded-xl border border-border">
+            <table className="w-full text-sm text-left">
+              <thead className="bg-muted/60">
+                <tr>
+                  <th className="px-4 py-3 font-semibold">Peso</th>
+                  <th className="px-4 py-3 font-semibold">Consumo (ml)</th>
+                  <th className="px-4 py-3 font-semibold">Em litros</th>
+                  <th className="px-4 py-3 font-semibold">Copos (250 ml)</th>
+                </tr>
+              </thead>
+              <tbody className="divide-y divide-border">
+                {[50, 55, 60, 65, 70, 75, 80, 85, 90, 95, 100].map((kg) => {
+                  const ml = kg * 35;
+                  const l = (ml / 1000).toFixed(2);
+                  const copos = Math.round(ml / 250);
+                  return (
+                    <tr key={kg} className="hover:bg-muted/30 transition-colors">
+                      <td className="px-4 py-2.5 font-medium">{kg} kg</td>
+                      <td className="px-4 py-2.5 text-muted-foreground">{ml.toLocaleString("pt-BR")} ml</td>
+                      <td className="px-4 py-2.5 text-muted-foreground">{l.replace(".", ",")} L</td>
+                      <td className="px-4 py-2.5 text-muted-foreground">{copos} copos</td>
+                    </tr>
+                  );
+                })}
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <section className="space-y-4">
+          <h2 className="text-xl font-semibold">Perguntas frequentes</h2>
+
+          <div>
+            <h3 className="font-semibold mb-1">Quantos litros de água devo beber por dia?</h3>
+            <p className="text-muted-foreground">
+              A recomendação geral é de 35 ml por kg de peso corporal. Uma pessoa de 70 kg deve
+              beber cerca de 2,45 litros — aproximadamente 10 copos de 250 ml — por dia.
+            </p>
+          </div>
+
+          <div>
+            <h3 className="font-semibold mb-1">A fórmula de 35 ml/kg serve para todo mundo?</h3>
+            <p className="text-muted-foreground">
+              É uma referência amplamente utilizada, mas pode variar conforme atividade física,
+              temperatura ambiente, condições de saúde e gestação. Pessoas que praticam exercícios
+              intensos ou vivem em clima quente precisam aumentar a ingestão. Consulte um
+              profissional de saúde para orientação individualizada.
+            </p>
+          </div>
+
+          <div>
+            <h3 className="font-semibold mb-1">Outros líquidos contam como ingestão de água?</h3>
+            <p className="text-muted-foreground">
+              Sucos naturais, chás, sopas e alimentos com alto teor de água (como melancia e pepino)
+              contribuem para a hidratação diária. A fórmula de 35 ml/kg considera exclusivamente
+              água pura, então os demais líquidos funcionam como bônus.
+            </p>
+          </div>
+
+          <div>
+            <h3 className="font-semibold mb-1">Como saber se estou bebendo água suficiente?</h3>
+            <p className="text-muted-foreground">
+              O indicador mais prático é a cor da urina: amarelo-claro indica hidratação adequada;
+              amarelo-escuro ou laranja indica necessidade de beber mais água. Sede frequente também
+              é sinal de desidratação leve.
+            </p>
+          </div>
+        </section>
+      </div>
+
       <AdUnit slot="bottom" className="mt-8" />
 
       <RelatedCalculators />

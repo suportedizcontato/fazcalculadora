@@ -165,6 +165,115 @@ export default function Xicaras() {
           </div>
         </CardContent>
       </Card>
+      <AdUnit slot="inContent" className="mt-6" />
+
+      <div className="mt-10 space-y-8 text-base text-foreground">
+        <section>
+          <h2 className="text-xl font-semibold mb-3">Tabela de conversão de xícaras</h2>
+          <div className="overflow-x-auto rounded-xl border border-border">
+            <table className="w-full text-sm text-left">
+              <thead className="bg-muted/60">
+                <tr>
+                  <th className="px-4 py-3 font-semibold">Xícaras (chá, 240 ml)</th>
+                  <th className="px-4 py-3 font-semibold">Em ml</th>
+                  <th className="px-4 py-3 font-semibold">Copos de 200 ml</th>
+                </tr>
+              </thead>
+              <tbody className="divide-y divide-border">
+                {[
+                  ["¼ xícara", 0.25],
+                  ["½ xícara", 0.5],
+                  ["¾ xícara", 0.75],
+                  ["1 xícara", 1],
+                  ["1½ xícaras", 1.5],
+                  ["2 xícaras", 2],
+                  ["3 xícaras", 3],
+                ].map(([label, qtd]) => {
+                  const q = qtd as number;
+                  const ml = Math.round(q * 240);
+                  const copos = (ml / 200).toFixed(1);
+                  return (
+                    <tr key={String(label)} className="hover:bg-muted/30 transition-colors">
+                      <td className="px-4 py-2.5 font-medium">{label as string}</td>
+                      <td className="px-4 py-2.5 text-muted-foreground">{ml} ml</td>
+                      <td className="px-4 py-2.5 text-muted-foreground">{copos.replace(".", ",")} copos</td>
+                    </tr>
+                  );
+                })}
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <section>
+          <h2 className="text-xl font-semibold mb-3">Tipos de xícara e equivalências</h2>
+          <div className="overflow-x-auto rounded-xl border border-border">
+            <table className="w-full text-sm text-left">
+              <thead className="bg-muted/60">
+                <tr>
+                  <th className="px-4 py-3 font-semibold">Utensílio</th>
+                  <th className="px-4 py-3 font-semibold">Volume padrão</th>
+                  <th className="px-4 py-3 font-semibold">Uso típico</th>
+                </tr>
+              </thead>
+              <tbody className="divide-y divide-border">
+                <tr className="hover:bg-muted/30 transition-colors">
+                  <td className="px-4 py-2.5 font-medium">Xícara de chá (BR)</td>
+                  <td className="px-4 py-2.5 text-muted-foreground">240 ml</td>
+                  <td className="px-4 py-2.5 text-muted-foreground">Receitas brasileiras</td>
+                </tr>
+                <tr className="hover:bg-muted/30 transition-colors">
+                  <td className="px-4 py-2.5 font-medium">Cup americana (US)</td>
+                  <td className="px-4 py-2.5 text-muted-foreground">236 ml</td>
+                  <td className="px-4 py-2.5 text-muted-foreground">Receitas importadas</td>
+                </tr>
+                <tr className="hover:bg-muted/30 transition-colors">
+                  <td className="px-4 py-2.5 font-medium">Xícara de café</td>
+                  <td className="px-4 py-2.5 text-muted-foreground">50–80 ml</td>
+                  <td className="px-4 py-2.5 text-muted-foreground">Bebidas, bolos de café</td>
+                </tr>
+                <tr className="hover:bg-muted/30 transition-colors">
+                  <td className="px-4 py-2.5 font-medium">Copo americano</td>
+                  <td className="px-4 py-2.5 text-muted-foreground">200 ml</td>
+                  <td className="px-4 py-2.5 text-muted-foreground">Referência em hidratação</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <section className="space-y-4">
+          <h2 className="text-xl font-semibold">Perguntas frequentes</h2>
+
+          <div>
+            <h3 className="font-semibold mb-1">Quantos ml tem uma xícara de receita?</h3>
+            <p className="text-muted-foreground">
+              A xícara de chá padrão brasileira tem 240 ml. Este conversor usa esse valor, que é
+              o mais comum em receitas nacionais. Algumas receitas importadas usam a cup americana
+              de 236 ml — a diferença de 4 ml é irrelevante para uso culinário.
+            </p>
+          </div>
+
+          <div>
+            <h3 className="font-semibold mb-1">Qual a diferença entre xícara de chá e de café?</h3>
+            <p className="text-muted-foreground">
+              A xícara de chá tem 240 ml. A xícara de café tem aproximadamente 50–80 ml. Receitas
+              brasileiras geralmente se referem à xícara de chá quando pedem "xícara" sem
+              especificar o tipo.
+            </p>
+          </div>
+
+          <div>
+            <h3 className="font-semibold mb-1">Xícara brasileira é igual à xícara americana (cup)?</h3>
+            <p className="text-muted-foreground">
+              Quase. A xícara americana (1 cup) tem 240 ml, coincidindo exatamente com a xícara de
+              chá brasileira de 240 ml. A versão oficial americana é 236,588 ml (8 fl oz), mas a
+              diferença é desprezível em receitas.
+            </p>
+          </div>
+        </section>
+      </div>
+
       <AdUnit slot="bottom" className="mt-8" />
 
       <RelatedCalculators />

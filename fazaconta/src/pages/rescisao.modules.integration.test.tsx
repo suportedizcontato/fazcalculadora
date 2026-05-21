@@ -245,7 +245,7 @@ describe("7.2 — Módulo 13º: validação de mesesTrabalhados fora de 1–12",
       expect(screen.getAllByRole("alert").length).toBeGreaterThanOrEqual(1);
     });
 
-    expect(screen.queryByText("13º salário proporcional")).not.toBeInTheDocument();
+    expect(screen.queryByRole("heading", { name: /13º salário proporcional/i })).not.toBeInTheDocument();
   }, 15000);
 
   it("mesesTrabalhados = 13 bloqueia cálculo ou não exibe resultado (Máximo 12)", async () => {
@@ -262,7 +262,7 @@ describe("7.2 — Módulo 13º: validação de mesesTrabalhados fora de 1–12",
     // OR a range error via max. Either way, no result should appear.
     await waitFor(
       () => {
-        expect(screen.queryByText("13º salário proporcional")).not.toBeInTheDocument();
+        expect(screen.queryByRole("heading", { name: /13º salário proporcional/i })).not.toBeInTheDocument();
       },
       { timeout: 5000 }
     );

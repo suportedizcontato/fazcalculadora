@@ -90,7 +90,7 @@ export function PageMeta({
     setMeta('meta[property="og:image"]', "property", "og:image", imageUrl);
 
     // Twitter Cards
-    setMeta('meta[name="twitter:card"]', "name", "twitter:card", "summary");
+    setMeta('meta[name="twitter:card"]', "name", "twitter:card", "summary_large_image");
     setMeta('meta[name="twitter:title"]', "name", "twitter:title", title);
     setMeta('meta[name="twitter:description"]', "name", "twitter:description", description);
 
@@ -149,16 +149,19 @@ export function PageMeta({
           url: BASE_URL,
           name: SITE_NAME,
           publisher: { "@id": `${BASE_URL}/#organization` },
-          potentialAction: {
-            "@type": "SearchAction",
-            target: {
-              "@type": "EntryPoint",
-              urlTemplate: `${BASE_URL}/?q={search_term_string}`,
-            },
-            "query-input": "required name=search_term_string",
-          },
         }
       );
+    }
+
+    if (!isHome) {
+      const breadcrumbName = title.split(/\s*[—|]\s*/)[0].trim();
+      graph.push({
+        "@type": "BreadcrumbList",
+        itemListElement: [
+          { "@type": "ListItem", position: 1, name: "Início", item: BASE_URL },
+          { "@type": "ListItem", position: 2, name: breadcrumbName, item: canonicalUrl },
+        ],
+      });
     }
 
     document.querySelector("#page-jsonld")?.remove();

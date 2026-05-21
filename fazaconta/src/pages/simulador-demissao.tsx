@@ -756,6 +756,8 @@ export default function SimuladorDemissaoPage() {
           )}
         </div>
 
+        <AdUnit slot="inContent" className="mt-8" />
+
         {/* Educational content */}
         <section className="mt-12 space-y-8">
           <div>
