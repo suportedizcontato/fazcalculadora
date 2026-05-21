@@ -1,6 +1,7 @@
 import { Link } from "wouter";
 import { Percent, ArrowRight } from "lucide-react";
 import { PageMeta } from "@/components/page-meta";
+import { AdUnit } from "@/components/ad-unit";
 
 const FAQ_X_PORCENTO = [
   { question: "Como calcular porcentagem de um valor?", answer: "Multiplique o valor pela porcentagem e divida por 100. Para saber quanto é 15% de R$ 200: (15 × 200) ÷ 100 = R$ 30." },
@@ -18,6 +19,7 @@ export default function QuantoEXPorcentoDeY() {
         description="Descubra quanto é X% de um valor com exemplos práticos. Aprenda a calcular porcentagem e use nossa calculadora online gratuita."
         faq={FAQ_X_PORCENTO}
         dateModified="2026-04-01"
+        ogType="article"
       />
       <div className="mb-8">
         <div className="inline-flex items-center justify-center p-3 bg-emerald-50 dark:bg-emerald-900/20 rounded-xl text-emerald-600 mb-4">
@@ -43,6 +45,8 @@ export default function QuantoEXPorcentoDeY() {
           Entender a fórmula permite resolver qualquer caso rapidamente.
         </p>
       </div>
+
+      <AdUnit slot="horizontal" className="mb-8" />
 
       <div className="space-y-10 text-base text-foreground">
         <section>
@@ -270,6 +274,8 @@ export default function QuantoEXPorcentoDeY() {
           </ul>
         </section>
       </div>
+
+      <AdUnit slot="bottom" className="mt-8" />
     </div>
   );
 }

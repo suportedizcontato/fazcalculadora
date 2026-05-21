@@ -2,6 +2,7 @@ import { Link } from "wouter";
 import { Tag, ArrowRight } from "lucide-react";
 import { PageMeta } from "@/components/page-meta";
 import type { HowToStep } from "@/components/page-meta";
+import { AdUnit } from "@/components/ad-unit";
 
 const HOWTO_DESCONTO = {
   name: "Como Calcular Desconto Percentual",
@@ -38,6 +39,7 @@ export default function ComoCalcularDesconto() {
         faq={FAQ_DESCONTO}
         howTo={HOWTO_DESCONTO}
         dateModified="2026-04-01"
+        ogType="article"
       />
       <div className="mb-8">
         <div className="inline-flex items-center justify-center p-3 bg-emerald-50 dark:bg-emerald-900/20 rounded-xl text-emerald-600 mb-4">
@@ -63,6 +65,8 @@ export default function ComoCalcularDesconto() {
           avaliar promoções e evitar erros na hora de pagar.
         </p>
       </div>
+
+      <AdUnit slot="horizontal" className="mb-8" />
 
       <div className="space-y-10 text-base text-foreground">
         <section>
@@ -295,6 +299,8 @@ export default function ComoCalcularDesconto() {
           </ul>
         </section>
       </div>
+
+      <AdUnit slot="bottom" className="mt-8" />
 
       <div className="mt-6 flex justify-end">
         <p className="text-xs text-muted-foreground">

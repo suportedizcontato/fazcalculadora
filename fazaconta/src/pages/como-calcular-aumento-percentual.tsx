@@ -2,6 +2,7 @@ import { Link } from "wouter";
 import { TrendingUp, ArrowRight } from "lucide-react";
 import { PageMeta } from "@/components/page-meta";
 import type { HowToStep } from "@/components/page-meta";
+import { AdUnit } from "@/components/ad-unit";
 
 const HOWTO_AUMENTO = {
   name: "Como Calcular Aumento Percentual",
@@ -39,6 +40,7 @@ export default function ComoCalcularAumentoPercentual() {
         faq={FAQ_AUMENTO}
         howTo={HOWTO_AUMENTO}
         dateModified="2026-04-01"
+        ogType="article"
       />
       <div className="mb-8">
         <div className="inline-flex items-center justify-center p-3 bg-blue-500/10 rounded-xl text-blue-500 mb-4">
@@ -64,6 +66,8 @@ export default function ComoCalcularAumentoPercentual() {
           Saber calcular evita surpresas e ajuda a planejar melhor.
         </p>
       </div>
+
+      <AdUnit slot="horizontal" className="mb-8" />
 
       <div className="space-y-10 text-base text-foreground">
         <section>
@@ -306,6 +310,8 @@ export default function ComoCalcularAumentoPercentual() {
           </ul>
         </section>
       </div>
+
+      <AdUnit slot="bottom" className="mt-8" />
 
       <div className="mt-6 flex justify-end">
         <p className="text-xs text-muted-foreground">

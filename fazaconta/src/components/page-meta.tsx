@@ -3,7 +3,7 @@ import { useLocation } from "wouter";
 
 const BASE_URL = "https://www.fazacontaonline.com";
 const SITE_NAME = "Fazaconta";
-const DEFAULT_OG_IMAGE = `${BASE_URL}/og-image.png`;
+const DEFAULT_OG_IMAGE = `${BASE_URL}/opengraph.jpg`;
 
 interface JsonLdFaq {
   question: string;
@@ -28,6 +28,8 @@ interface PageMetaProps {
   isHome?: boolean;
   dateModified?: string;
   ogImage?: string;
+  ogType?: "website" | "article";
+  noindex?: boolean;
 }
 
 type MetaRecord = { el: HTMLMetaElement; wasCreated: boolean; prevContent: string };
@@ -62,6 +64,8 @@ export function PageMeta({
   isHome,
   dateModified,
   ogImage,
+  ogType = "website",
+  noindex = false,
 }: PageMetaProps) {
   const [location] = useLocation();
   const path = location === "/" ? "/" : location.replace(/\/$/, "");
@@ -84,15 +88,24 @@ export function PageMeta({
     // Open Graph
     setMeta('meta[property="og:title"]', "property", "og:title", title);
     setMeta('meta[property="og:description"]', "property", "og:description", description);
-    setMeta('meta[property="og:type"]', "property", "og:type", "website");
+    setMeta('meta[property="og:type"]', "property", "og:type", ogType);
     setMeta('meta[property="og:url"]', "property", "og:url", canonicalUrl);
     setMeta('meta[property="og:site_name"]', "property", "og:site_name", SITE_NAME);
     setMeta('meta[property="og:image"]', "property", "og:image", imageUrl);
+    setMeta('meta[property="og:image:width"]', "property", "og:image:width", "1200");
+    setMeta('meta[property="og:image:height"]', "property", "og:image:height", "630");
+    setMeta('meta[property="og:locale"]', "property", "og:locale", "pt_BR");
 
     // Twitter Cards
     setMeta('meta[name="twitter:card"]', "name", "twitter:card", "summary_large_image");
     setMeta('meta[name="twitter:title"]', "name", "twitter:title", title);
     setMeta('meta[name="twitter:description"]', "name", "twitter:description", description);
+    setMeta('meta[name="twitter:image"]', "name", "twitter:image", imageUrl);
+
+    // Robots
+    if (noindex) {
+      setMeta('meta[name="robots"]', "name", "robots", "noindex, follow");
+    }
 
     // JSON-LD
     const graph: object[] = [];
@@ -182,7 +195,7 @@ export function PageMeta({
       }
       jsonLdScript?.remove();
     };
-  }, [title, description, canonicalUrl, faq, howTo, softwareApp, isHome, dateModified, imageUrl]);
+  }, [title, description, canonicalUrl, faq, howTo, softwareApp, isHome, dateModified, imageUrl, ogType, noindex]);
 
   return null;
 }

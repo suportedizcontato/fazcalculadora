@@ -1,10 +1,16 @@
 import { Link } from "wouter";
 import { Card, CardContent } from "@/components/ui/card";
 import { AlertCircle, Home, Percent, Activity, Droplets, Coffee, Briefcase, Clock, Timer, UserMinus } from "lucide-react";
+import { PageMeta } from "@/components/page-meta";
 
 export default function NotFound() {
   return (
     <div className="w-full flex items-center justify-center p-4">
+      <PageMeta
+        title="Página não encontrada | Fazaconta Online"
+        description="A página que você procura não existe. Veja abaixo as calculadoras disponíveis no Fazaconta Online."
+        noindex
+      />
       <Card className="w-full max-w-lg">
         <CardContent className="pt-6 pb-8">
           <div className="flex items-center gap-3 mb-4">
